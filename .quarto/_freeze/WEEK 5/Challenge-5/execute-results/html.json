@@ -1,0 +1,14 @@
+{
+  "hash": "c210c29a650497e6f3f21116483d967e",
+  "result": {
+    "markdown": "---\ntitle: \"Challenge-5\"\nauthor: \"Insert your name here\"\ndate: \"2023-10-19\"\noutput: html_document\n---\n\n\n\n\n## Questions\n<br>\n\n#### Question-1: Local Variable Shadowing \n\nCreate an R function that defines a global variable called `x` with a value of 5. Inside the function, declare a local variable also named `x` with a value of 10. Print the value of `x` both inside and outside the function to demonstrate shadowing.\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>\n\n#### Question-2: Modify Global Variable\n\nCreate an R function that takes an argument and adds it to a global variable called `total`. Call the function multiple times with different arguments to accumulate the values in `total`.\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>\n\n#### Question-3: Global and Local Interaction \n\nWrite an R program that includes a global variable `total` with an initial value of 100. Create a function that takes an argument, adds it to `total`, and returns the updated `total`. Demonstrate how this function interacts with the global variable.\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>\n\n#### Question-4: Nested Functions\n\nDefine a function `outer_function` that declares a local variable `x` with a value of 5. Inside `outer_function`, define another function `inner_function` that prints the value of `x`. Call both functions to show how the inner function accesses the variable from the outer function's scope.\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>\n\n#### Question-5: Meme Generator Function\n\nCreate a function that takes a text input and generates a humorous meme with the text overlaid on an image of your choice. You can use the `magick` package for image manipulation. You can find more details about the commands offered by the package, with some examples of annotating images here: https://cran.r-project.org/web/packages/magick/vignettes/intro.html\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>\n\n#### Question-6: Text Analysis Game  \n\nDevelop a text analysis game in which the user inputs a sentence, and the R function provides statistics like the number of words, characters, and average word length. Reward the user with a \"communication skill level\" based on their input.\n\n**Solutions:**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Enter code here\n```\n:::\n\n<br>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

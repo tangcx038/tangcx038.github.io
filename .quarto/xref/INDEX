@@ -1,0 +1,47 @@
+{
+  "index.qmd": {
+    "index.html": "52c5c16e"
+  },
+  "about.qmd": {
+    "about.html": "f3311236"
+  },
+  "WEEK 1/Challenge-1.Rmd": {
+    "Challenge-1.html": "1ec8d80e"
+  },
+  "WEEK 2/Challenge-2.Rmd": {
+    "Challenge-2.html": "8fc7c087"
+  },
+  "WEEK 3/Challenge-3.1.Rmd": {
+    "Challenge-3.1.html": "576cff83"
+  },
+  "WEEK 3/Challenge-3.Rmd": {
+    "Challenge-3.html": "dddbab9a"
+  },
+  "WEEK 3/Code-along-3.Rmd": {
+    "Code-along-3.html": "69fdfc63"
+  },
+  "WEEK 4/Challenge-4.4-9.Rmd": {
+    "Challenge-4.4-9.html": "0b019c1b"
+  },
+  "WEEK 4/Challenge-4.Rmd": {
+    "Challenge-4.html": "6ab7c5a5"
+  },
+  "WEEK 4/Code-along-4.Rmd": {
+    "Code-along-4.html": "dc66ae8d"
+  },
+  "WEEK 5/Challenge-5.Rmd": {
+    "Challenge-5.html": "b9976073"
+  },
+  "WEEK 5/code along/Code-along-5.Rmd": {
+    "Code-along-5.html": "7acb0566"
+  },
+  "WEEK 6/Challenge-6.1.Rmd": {
+    "Challenge-6.1.html": "45d0fbb6"
+  },
+  "WEEK 6/Challenge-6.Rmd": {
+    "Challenge-6.html": "32602df5"
+  },
+  "WEEK 6/Code-along-6.Rmd": {
+    "Code-along-6.html": "2c47256a"
+  }
+}

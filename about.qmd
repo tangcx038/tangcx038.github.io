@@ -2,7 +2,11 @@
 title: "About NM2207"
 ---
 
-Check out: <https://github.com/tangcx038/NM2207_CHING>
+Check out:
+
+<https://github.com/tangcx038/NM2207_CHING>
+
+<https://github.com/tangcx038/tangcx038.github.io>
 
 ### Course content
 

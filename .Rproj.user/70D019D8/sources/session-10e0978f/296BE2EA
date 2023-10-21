@@ -3,7 +3,7 @@
     "path": "~/ChingXian.github.io/about.qmd",
     "project_path": "about.qmd",
     "type": "quarto_markdown",
-    "hash": "152948222",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1697710969119.0,
@@ -16,7 +16,7 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "45:0",
+        "rmdVisualModeLocation": "2:0",
         "cursorPosition": "0,0",
         "scrollLine": "0"
     },

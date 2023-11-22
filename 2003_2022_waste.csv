@@ -1,0 +1,281 @@
+waste_type,total_generate_1k_tonnes,total_recycled_1k_tonnes,year,total_not_recycled_1k_tonnes
+Construction & Demolition,1624,1618,2018,6
+Ferrous Metals,1269,126,2018,1143
+Paper/Cardboard,1054,586,2018,468
+Plastics,949,41,2018,908
+Food,763,126,2018,637
+Wood/Timber,521,428,2018,93
+Horticultural,320,227,2018,93
+Textile/Leather,220,14,2018,206
+Used Slag,181,179,2018,2
+Non-Ferrous Metals,171,170,2018,1
+Glass,64,12,2018,52
+Scrap Tyres,32,29,2018,3
+"Others (stones, ceramic, rubber, ect)",286,11,2018,275
+Overall,7695,4726,2018,2969
+Construction & Demolition,1440,1434,2019,6
+Ferrous Metals,1278,1270,2019,8
+Paper/Cardboard,1011,449,2019,562
+Plastics,930,37,2019,893
+Food,744,136,2019,608
+Wood/Timber,438,289,2019,149
+Horticultural,400,293,2019,107
+Textile/Leather,168,6,2019,162
+Used Slag,129,127,2019,2
+Non-Ferrous Metals,126,124,2019,2
+Glass,75,11,2019,64
+Scrap Tyres,33,31,2019,2
+"Others (stones, ceramic, rubber, ect)",210,15,2019,195
+Overall,7234,4247,2019,2987
+Paper/Cardboard,1144,432,2020,712
+Ferrous Metals,934,930,2020,4
+Plastics,868,36,2020,832
+Construction & Demolition,825,822,2020,3
+Food,665,126,2020,539
+Horticultural,313,249,2020,64
+Wood/Timber,304,195,2020,109
+Textile/Leather,137,6,2020,131
+Used slag,106,104,2020,2
+Non-Ferrous Metals,75,73,2020,2
+Glass,66,7,2020,59
+Scrap Tyres,23,22,2020,1
+"Others (stones, ceramic, rubber, ect)",193,21,2020,172
+Overall,5880,3040,2020,2840
+Construction & Demolition,1013,1011,2021,2
+Ferrous Metals,1312,1306,2021,6
+Paper/Cardboard,1136,437,2021,699
+Plastics,982,58,2021,924
+Food,817,154,2021,663
+Wood/Timber,310,234,2021,76
+Horticultural,332,277,2021,55
+Textile/Leather,189,7,2021,182
+Used Slag,182,181,2021,1
+Non-Ferrous Metals,88,87,2021,1
+Glass,74,9,2021,65
+Scrap Tyres,27,26,2021,1
+"Others (stones, ceramic, rubber, ect)",233,18,2021,215
+Overall,6944,3826,2021,3118
+Construction & Demolition,1424,1419,2022,5
+Ferrous Metals,1338,1331,2022,7
+Paper/Cardboard,1064,394,2022,670
+Plastics,1001,57,2022,944
+Food,813,146,2022,667
+Wood/Timber,419,298,2022,121
+Horticultural,221,188,2022,33
+Textile/Leather,254,5,2022,249
+Used Slag,169,166,2022,3
+Non-Ferrous Metals,92,91,2022,1
+Glass,73,11,2022,62
+Scrap Tyres,26,25,2022,1
+"Others (stones, ceramic, rubber, ect)",249,30,2022,219
+Overall,7385,4188,2022,3197
+Food,791,111,2016,680
+Paper/Cardboard,1183,607,2016,576
+Plastics,822,60,2016,762
+Construction & Demolition,1595,1586,2016,9
+Horticultural,321,209,2016,112
+Wood/Timber,531,412,2016,119
+Ferrous Metals,1358,1352,2016,6
+Non-Ferrous Metals,97,96,2016,1
+Used slag,251,247,2016,4
+Glass,72,15,2016,57
+Textile/Leather,151,11,2016,140
+Scrap Tyres,33,30,2016,3
+"Others (stones, ceramic, rubber, ect)",383,7,2016,376
+Overall,7814,4769,2016,3045
+Food,786,104,2015,682
+Paper/Cardboard,1192,604,2015,588
+Plastics,825,58,2015,767
+Construction & Demolition,1412,1403,2015,9
+Horticultural,362,237,2015,125
+Wood/Timber,371,294,2015,77
+Ferrous Metals,1349,1333,2015,16
+Non-Ferrous Metals,180,160,2015,20
+Used slag,370,366,2015,4
+Glass,75,15,2015,60
+Textile/Leather,157,13,2015,144
+Scrap Tyres,36,33,2015,3
+"Others (stones, ceramic, rubber, ect)",365,6,2015,359
+Overall,7674,4650,2015,3024
+Food,789,101,2014,688
+Paper/Cardboard,1237,647,2014,590
+Plastics,869,80,2014,789
+Construction & Demolition,1270,1260,2014,10
+Horticultural,278,163,2014,115
+Wood/Timber,368,293,2014,75
+Ferrous Metals,1446,1389,2014,57
+Non-Ferrous Metals,118,95,2014,23
+Used slag,366,361,2014,5
+Glass,80,16,2014,64
+Textile/Leather,159,17,2014,142
+Scrap Tyres,26,23,2014,3
+"Others (stones, ceramic, rubber, ect)",360,5,2014,355
+Overall,7515,4471,2014,3044
+Food,796,100,2013,696
+Paper/Cardboard,1261,679,2013,582
+Plastics,832,91,2013,741
+Construction & Demolition,1695,1683,2013,12
+Wood/Timber,332,255,2013,77
+Horticultural,253,121,2013,132
+Ferrous Metals,1416,1369,2013,47
+Non-Ferrous Metals,135,114,2013,21
+Used Slag,354,345,2013,9
+Glass,74,15,2013,59
+Textile/Leather,157,16,2013,141
+Scrap Tyres,22,19,2013,3
+"Others (stones, ceramic, rubber, ect)",335,5,2013,330
+Overall,7852,4826,2013,3026
+Food,703,85,2012,618
+Paper/Cardboard,1252,697,2012,555
+Plastics,803,82,2012,721
+Construction & Demolition,1292,1283,2012,9
+Wood/Timber,344,236,2012,108
+Horticultural,248,108,2012,140
+Ferrous Metals,1386,1331,2012,55
+Non-Ferrous Metals,123,97,2012,26
+Used Slag,368,358,2012,10
+Glass,75,20,2012,55
+Textile/Leather,159,18,2012,141
+Scrap Tyres,18,16,2012,2
+"Others (stones, ceramic, rubber, ect)",338,5,2012,333
+Overall,7270,4336,2012,2934
+Food,676,70,2011,606
+Paper/Cardboard,1368,765,2011,603
+Plastics,733,77,2011,656
+Construction & Demolition,1204,1191,2011,13
+Wood/Timber,274,177,2011,97
+Horticultural,239,89,2011,150
+Ferrous Metals,1239,1172,2011,67
+Non-Ferrous Metals,117,103,2011,14
+Used Slag,342,336,2011,6
+Glass,73,21,2011,52
+Textile/Leather,131,17,2011,114
+Scrap Tyres,22,18,2011,4
+"Others (stones, ceramic, rubber, ect)",328,3,2011,325
+Overall,6898,4039,2011,2859
+Food,641,102,2010,539
+Paper/Cardboard,1384,738,2010,646
+Plastics,740,78,2010,662
+Construction & Demolition,922,912,2010,10
+Wood/Timber,270,190,2010,80
+Horticultural,251,99,2010,152
+Ferrous Metals,1195,1128,2010,67
+Non-Ferrous Metals,86,73,2010,13
+Used Slag,383,379,2010,4
+Glass,80,19,2010,61
+Textile/Leather,121,15,2010,106
+Scrap Tyres,24,20,2010,4
+"Others (stones, ceramic, rubber, ect)",307,4,2010,303
+Overall,6517,3758,2010,2759
+Food,606,77,2009,529
+Paper/Cardboard,1201,574,2009,627
+Plastics,689,60,2009,629
+Construction & Demolition,1176,1151,2009,25
+Wood/Timber,288,207,2009,81
+Horticultural,238,94,2009,144
+Ferrous Metals,872,806,2009,66
+Non-Ferrous Metals,58,48,2009,10
+Used Slag,422,419,2009,3
+Glass,73,16,2009,57
+Textile/Leather,109,13,2009,96
+Scrap Tyres,23,19,2009,4
+"Others (stones, ceramic, rubber, ect)",271,3,2009,268
+Overall,6114,3485,2009,2629
+Food,568,68,2008,500
+Paper/Cardboard,1263,609,2008,654
+Plastics,684,61,2008,623
+Construction & Demolition,922,900,2008,22
+Wood/Timber,270,190,2008,80
+Horticultural,229,96,2008,133
+Ferrous Metals,785,735,2008,50
+Non-Ferrous Metals,85,72,2008,13
+Used Slag,566,561,2008,5
+Glass,57,10,2008,47
+Textile/Leather,93,11,2008,82
+Scrap Tyres,25,22,2008,3
+"Others (stones, ceramic, rubber, ect)",308,8,2008,300
+Overall,5970,3343,2008,2627
+Food,559,51,2007,508
+Paper/Cardboard,1203,619,2007,584
+Plastics,660,75,2007,585
+Construction & Demolition,778,759,2007,19
+Wood/Timber,246,128,2007,118
+Horticultural,225,91,2007,134
+Ferrous Metals,737,668,2007,69
+Non-Ferrous Metals,92,76,2007,16
+Used Slag,527,520,2007,7
+Glass,65,6,2007,59
+Textile/Leather,110,6,2007,104
+Scrap Tyres,26,22,2007,4
+"Others (stones, ceramic, rubber, ect)",249,14,2007,235
+Overall,5601,3035,2007,2566
+Food,543,45,2006,498
+Paper/Cardboard,1116,571,2006,545
+Plastics,657,78,2006,579
+Construction & Demolition,619,604,2006,15
+Wood/Timber,224,82,2006,142
+Horticultural,231,87,2006,144
+Ferrous Metals,726,657,2006,69
+Non-Ferrous Metals,87,71,2006,16
+Used Slag,471,417,2006,54
+Glass,63,6,2006,57
+Textile/Leather,92,4,2006,88
+Scrap Tyres,24,19,2006,5
+"Others (stones, ceramic, rubber, ect)",242,15,2006,227
+Overall,5221,2657,2006,2564
+Food,532,37,2005,495
+Paper/Cardboard,1099,541,2005,558
+Plastics,675,86,2005,589
+Construction & Demolition,493,465,2005,28
+Wood/Timber,239,90,2005,149
+Horticultural,200,101,2005,99
+Ferrous Metals,818,749,2005,69
+Non-Ferrous Metals,89,75,2005,14
+Used Slag,382,299,2005,83
+Glass,63,4,2005,59
+Textile/Leather,89,4,2005,85
+Scrap Tyres,17,11,2005,6
+"Others (stones, ceramic, rubber, ect)",225,9,2005,216
+Overall,5018,2469,2005,2549
+Food,531,31,2004,500
+Paper/Cardboard,1132,520,2004,612
+Plastics,683,74,2004,609
+Construction & Demolition,509,471,2004,38
+Wood/Timber,222,74,2004,148
+Horticultural,227,128,2004,99
+Ferrous Metals,720,650,2004,70
+Non-Ferrous Metals,87,72,2004,15
+Used Slag,267,260,2004,7
+Glass,74,5,2004,69
+Textile/Leather,115,5,2004,110
+Scrap Tyres,15,7,2004,8
+"Others (stones, ceramic, rubber, ect)",114,11,2004,103
+Overall,4790,2307,2004,2483
+Food,548,33,2003,515
+Paper/Cardboard,1085,466,2003,619
+Plastics,580,39,2003,541
+Construction & Demolition,423,398,2003,25
+Wood/Timber,213,41,2003,172
+Horticultural,305,119,2003,186
+Ferrous Metals,857,799,2003,58
+Non-Ferrous Metals,94,76,2003,18
+Used Slag,260,239,2003,21
+Glass,66,6,2003,60
+Textile/Leather,92,1,2003,91
+Scrap Tyres,14,6,2003,8
+"Others (stones, ceramic, rubber, ect)",104,0,2003,104
+Overall,4728,2223,2003,2505
+Construction & Demolition,1609,1600,2017,9
+Ferrous Metals,1379,1371,2017,8
+Used slag,273,269,2017,4
+Non-Ferrous Metals,94,92,2017,2
+Scrap Tyres,36,33,2017,3
+Wood/Timber,424,327,2017,97
+Horticultural,328,221,2017,107
+Paper/Cardboard,1145,569,2017,576
+Glass,71,12,2017,59
+Food,810,133,2017,677
+Plastics,815,52,2017,763
+Textile/Leather,151,10,2017,141
+"Others (stones, ceramic, rubber, ect)",326,7,2017,319
+Overall,7704,4724,2017,2980

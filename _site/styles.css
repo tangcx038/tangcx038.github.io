@@ -1,1 +1,13 @@
 /* css styles */
+
+.extra-small-text {
+  font-size: 12px; /* Adjust the font size as needed */
+}
+
+.dark-gray-text {
+  color: #474747; /* Adjust the color as needed */
+}
+
+.topbr {
+  margin-top: 8px; /* Adjust the top margin as needed */
+}

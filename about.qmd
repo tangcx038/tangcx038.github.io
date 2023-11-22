@@ -1,35 +1,52 @@
 ---
-title: "About NM2207"
+title: "About"
+subtitle: "Read on to learn more about me"
 ---
 
-Check out:
+## {{< fa Smile >}} Me.
+
+I am currently a year3 undergraduate at the [National University of Singapore](https://nus.edu.sg/), pursuing a [Bachelor's in Arts in Archiectture](https://cde.nus.edu.sg/arch/programmes/bachelor-of-arts-in-architecture/) with a major in Architecture alongside a minor in [Interactive Media Development](https://fass.nus.edu.sg/cnm/undergraduate-minor-imd/). 
+
+## {{< fa racket >}} Hobbies.
+
+I reside in the vibrant community of Raffles Hall. Sporting activities are a significant part of my routine, with badminton and table tennis being my go-to choices during leisure hours. Volunteering is another passion I pursue whenever time permits. Engaging in meaningful conversations and acquiring new knowledge bring me immense joy. Currently, I am delving into the world of animation creation using Procreate, and simultaneously, I'm exploring the art of webpage development through the NM2207 module.
+
+
+::: column-margin
+```{r}
+#| echo: false
+knitr::include_graphics("StudioFR.jpg")
+```
+
+::: {.extra-small-text .dark-gray-text .topbr}
+My Journey in Architecture with my professors and unrelenting supports from my peers and family members.
+:::
+:::
+
+---
+
+## {{< fa book >}} NM2207
+
+Check out for my current NM2207 weekly progress:
 
 <https://github.com/tangcx038/NM2207_CHING>
 
 <https://github.com/tangcx038/tangcx038.github.io>
 
-### Course content
-
+::: {.extra-small-text .dark-gray-text .topbr}
+Course content
 ##### \[Week 1\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%201>
-
 ##### \[Week 2\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%202>
-
 ##### \[Week 3\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%203>
-
 ##### \[Week 4\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%204>
-
 ##### \[Week 5\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%205>
-
 ##### \[Week 6\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%206>
-
 ##### \[Week 7\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%207>
-
 ##### \[Week 8\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%208>
-
 ##### \[Week 9\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%209>
-
 ##### \[Week 10\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%2010>
-
 ##### \[Week 11\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%2011>
+##### \[Week 12\] <https://github.com/tangcx038/NM2207/tree/main/WEEK%2012>
+:::
 
-##### \[Week 12\] [https://github.com/tangcx038/NM2207/tree/main/WEEK%2012](https://github.com/tangcx038/NM2207/tree/main/WEEK%2011){.uri}
+

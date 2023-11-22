@@ -1,14 +1,28 @@
+title: "YOU CAN CALL ME: CHING "
+image: profilepic.jpg
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 15em
+  links: 
+    - text: Email
+      icon: envelope
+      href: "mailto:e0775098@u.nus.edu"
+    - text: Github
+      icon: github
+      href: https://github.com/ChingXian
+    - text: Resume
+      icon: file-text
 ---
-title: "ChingXian.github.io"
+
+::: {#about-block}
+:::
+
+I am a undergraduate at the National University of Singapore, currently in my third year studying Architecture. My passion lies in design and creativity. While my primary focus has been on architectural concepts and aesthetics, I am also enthusiastic about expanding my skill set to include coding and web development.
+
+My goal is to acquire coding skills that will empower me to design and develop my own webpage. I am thrilled about the prospect of merging architectural design principles with interactive and user-friendly web interfaces.
+
+Explore my website to discover more! Don't hesitate to reach out if you have opportunities for internships, learning experiences in webpage development, or positions in architecture firms, art studios, or any design-related fields. I'm eager to discuss potential collaborations and opportunities, and my [inbox](mailto:e0775098@u.nus.edu)is always open for exciting ventures in these domains.
+
 ---
 
-```         
-```
-
-\# Self-Introduction
-
-My name is Ching Xian. I am a Year 3 Architecture student with a passion for design and creativity. While my main focus has been on architectural concepts and aesthetics, I am also eager to expand my skill set to include coding and web development.
-
-My goal is to learn coding skills that will enable me to design and develop my own webpage. I am excited about the prospect of combining architectural design principles with interactive and user-friendly web interfaces.
-
-I am looking forward to the learning journey and gaining insights from fellow enthusiasts and experts. Let's embark on this exciting adventure together! :)

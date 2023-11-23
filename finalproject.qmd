@@ -134,7 +134,7 @@ map <- world_emissions_map %>%
   geom_polygon_interactive(aes(fill = `Food_emissions_by_country`, tooltip = `Food_emissions_by_country`), 
                            color = "black", size = 0.2) +
   labs(
-    title = "Greenhouse gas emisisons from food systems, 2015",
+    title = "Greenhouse gas emisisons from food systems",
     caption = "Source: Crippa et al. (2021). Food systems are responsible for a third of global anthropogenic GHG emissions. 
 Nature Food.
 OurWorldInData.org/environmental-impacts-of-food ● CC BY"

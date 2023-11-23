@@ -112,14 +112,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#convert-ggplot-to-plotly" id="toc-convert-ggplot-to-plotly" class="nav-link active" data-scroll-target="#convert-ggplot-to-plotly">Convert ggplot to plotly</a></li>
-  <li><a href="#add-a-caption" id="toc-add-a-caption" class="nav-link" data-scroll-target="#add-a-caption">Add a caption</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -150,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
 Unveiling the true severity of food waste
 </h5>
 <p class="bottom-right-text-bg-img">
-Image by <a href="https://www.freepik.com/free-photo/close-up-hand-holding-wooden-board_14351726.htm#query=food%20waste&amp;position=26&amp;from_view=search&amp;track=ais">Freepik</a>
+Image by <a href="https://www.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_13702315.htm">Freepik</a>
 </p>
 </section>
 <section id="introduction" class="container" width="100%">
@@ -162,9 +155,6 @@ Food comes from a long journey, starting with the farmer and ending up in our ho
 </p>
 <p>
 <strong>WASTING FOOD IS WASTING AGRICULTURAL LAND.</strong> The food produced but wasted globally every year requires 1.4 billion hectares of land, which is close to 30% of the world agricultural land area (UNEP, 2022).
-</p>
-<p>
-<strong>WASTING FOOD IS CONTRIBUTING TO GLOBAL WARMING.</strong> The carbon footprint of food wasted globally every year is 3.3 billion tonnes of carbon dioxide. If food waste was a country, it would be the third top emitter after the USA and China (FAO, 2011).
 </p>
 <p>
 <strong>WASTING FOOD IS WASTING MONEY.</strong> Besides its environmental cost, food wastage also represents a loss of economic value. On a global scale, the economic cost of the overall amount of food wastage is about $US 750 billion, equivalent to the GDP of Switzerland (FAO, 2011).
@@ -182,40 +172,8 @@ According to the <strong>United Nations’ Food and Agricultural Organisation of
 <div class="cell">
 
 </div>
-<section class="image-container">
-<img src="tasty-food-arrangement-top-view.jpg" style="width:100%;height:300px;object-fit:cover;">
-<h5 class="center-text-bg-img anchored">
-Food in Singapore
-</h5>
-<p class="bottom-right-text-bg-img">
-Image by <a href="https://www.freepik.com/free-photo/tasty-food-arrangement-top-view_20552615.htm#query=food%20packages&amp;position=23&amp;from_view=search&amp;track=ais&amp;uuid=93342a26-4a2a-4889-a4e0-fad38046c4af">Freepik</a>
-</p>
-</section>
-<section id="Zooming into our home country" class="container" width="100%">
-<h3 class="text-center fw-bold my-5 anchored">
-Singapore
-</h3>
-<p>
-With increasing number of <strong>food factories</strong>, the number of food waste <strong>increases</strong>.
-</p>
-</section>
-<div class="cell">
-
-</div>
-<p>emissions_from_food &lt;- read_csv(“emissions-from-food.csv”)</p>
-<p>world_emissions_map &lt;- emissions_from_food %&gt;% filter(country != “World”) %&gt;% left_join(world_map, by = c(“country” = “region”))</p>
-<p>map &lt;- world_emissions_map %&gt;% filter(Year == 2015) %&gt;% ggplot(aes(x = long, y = lat, group = group)) + geom_polygon_interactive(aes(fill = <code>Food emissions by country</code>, text = paste(“Country:”, country, “<br>Food Emissions:”, <code>Food emissions by country</code>)), color = “black”, size = 0.2) + labs( title = “Greenhouse gas emissions from food systems, 2015” ) + scale_fill_binned(low = “darkseagreen1”, high = “seagreen”, breaks = c(10000000, 50000000, 100000000, 500000000, 1000000000), label = c(“10 million t”, “50 million t”, “100 million t”, “500 million t”, “1 billion t”), guide = guide_colorsteps(barheight = unit(0.1, “in”), barwidth = unit(6, “in”))) + theme_void() + theme( plot.title = element_text(color = “gray20”, family = “serif”, size = 20), legend.position = “bottom”, legend.title = element_blank() )</p>
-<section id="convert-ggplot-to-plotly" class="level1">
-<h1>Convert ggplot to plotly</h1>
-<p>map &lt;- ggplotly(map)</p>
-</section>
-<section id="add-a-caption" class="level1">
-<h1>Add a caption</h1>
-<p>map &lt;- map %&gt;% layout(annotations = list(text = “Source: Crippa et al.&nbsp;(2021). Food systems are responsible for a third of global anthropogenic GHG emissions. Nature Food. OurWorldInData.org/environmental-impacts-of-food ● CC BY”, showarrow = FALSE, x = 0, y = -0.1, xref = “paper”, yref = “paper”))</p>
-<p>map</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

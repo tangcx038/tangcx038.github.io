@@ -1,5 +1,5 @@
 ---
-title: "FINAL PROJECT"
+title: ""
 runtime: shiny
 output: html_document
 ---
@@ -21,6 +21,9 @@ library(plotly)
 library(quarto)
 library(RColorBrewer)
 library(ggiraph)
+library(readr)
+library(knitr)
+library(sqldf)
 ```
 
 ```{=html}
@@ -33,17 +36,15 @@ library(ggiraph)
 cat("
 <section class=\"image-container\">
   <img src=\"delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table.jpg\" style=\"width:100%;height:300px;object-fit:cover;\"/>
-  <h5 class=\"center-text-bg-img\">Unveiling the true severity of food waste</h5>
-  <p class=\"bottom-right-text-bg-img\">Image by [Freepik](https://www.freepik.com/free-photo/close-up-hand-holding-wooden-board_14351726.htm#query=food%20waste&position=26&from_view=search&track=ais)</p>
+  <h2 class=\"center-text-bg-img\">Unveiling the true severity of food waste</h2>
+  <p class=\"bottom-right-text-bg-img\">Image by [Freepik](https://www.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_13702315.htm)</p>
 </section>
 
 <section id=\"introduction\" class=\"container\" width=\"100%\">
-  <h3 class=\"text-center fw-bold my-5\">Introduction</h3>
+  <h4 class=\"text-center fw-bold my-5\">Introduction</h4>
   <p>Food comes from a long journey, starting with the farmer and ending up in our homes. This journey, called the supply chain, uses a lot of the Earth's resources. When we sit down to eat, we get to enjoy the amazing result. Tradition and good cooking bring us tasty, nourishing, joyful, passionate, and life-giving meals. However, the sad truth is that we throw away a ton of our food—loads of it! And when we do that, we're also tossing away all the valuable resources that were essential to make it in the first place.</p>
 
   <p>**WASTING FOOD IS WASTING AGRICULTURAL LAND.** The food produced but wasted globally every year requires 1.4 billion hectares of land, which is close to 30% of the world agricultural land area (UNEP, 2022).</p>
-
-  <p>**WASTING FOOD IS CONTRIBUTING TO GLOBAL WARMING.** The carbon footprint of food wasted globally every year is 3.3 billion tonnes of carbon dioxide. If food waste was a country, it would be the third top emitter after the USA and China (FAO, 2011).</p>
 
   <p>**WASTING FOOD IS WASTING MONEY.** Besides its environmental cost, food wastage also represents a loss of economic value. On a global scale, the economic cost of the overall amount of food wastage is about $US 750 billion, equivalent to the GDP of Switzerland (FAO, 2011).</p>
 
@@ -52,7 +53,6 @@ cat("
 </section>
 ")
 ```
-
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 createInteractiveMap <- function(data_file, map_resolution = "world") {
@@ -93,8 +93,115 @@ y = 1))
 }
 
 # Interactive Map
-#interactiveMap <- createInteractiveMap("food-waste-by-country-2023.csv")
-#interactiveMap
+interactiveMap <- createInteractiveMap("food-waste-by-country-2023.csv")
+
+interactiveMap
+```
+
+```{r, results='asis', echo=FALSE}
+
+cat("
+  <h4 id=\"\" class=\"text-center fw-bold my-5\"> <span class=\"foodwasteword\">WASTING FOOD</span> IS CONTRIBUTING TO <span class=\"foodwasteword\"> GLOBAL WARMING</span></h4>
+
+
+  
+  <p><p> The carbon footprint of food wasted globally every year is 3.3 billion tonnes of carbon dioxide. **If food waste was a country, it would be the third top emitter after the USA and China (FAO, 2011).**</p>
+</section>
+")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Load data
+emissions_from_food <- read.csv("emissions-from-food.csv")
+
+emissions_from_food <- emissions_from_food %>% 
+  mutate(country = case_when(Entity == "United States" ~ "USA",
+                             Entity == "United Kingdom" ~ "UK",
+                             Entity == "Czechia" ~ "Czech Republic",
+                             Entity == "Democratic Republic of Congo" ~ "Democratic Republic of the Congo",
+                             TRUE ~ Entity))
+
+world_map <- map_data("world")
+
+world_emissions_map <- emissions_from_food %>% 
+  filter(country != "World") %>% 
+  left_join(world_map, by = c("country" = "region"))
+
+map <- world_emissions_map %>% 
+  filter(Year == 2015) %>% 
+  ggplot(aes(x = long, y = lat, group = group)) +
+  geom_polygon_interactive(aes(fill = `Food_emissions_by_country`, tooltip = `Food_emissions_by_country`), 
+                           color = "black", size = 0.2) +
+  labs(
+    title = "Greenhouse gas emisisons from food systems, 2015",
+    caption = "Source: Crippa et al. (2021). Food systems are responsible for a third of global anthropogenic GHG emissions. 
+Nature Food.
+OurWorldInData.org/environmental-impacts-of-food ● CC BY"
+  ) +
+  scale_fill_binned(low = "darkseagreen1", high = "seagreen", 
+                    breaks = c(10000000, 50000000, 100000000, 500000000, 1000000000),
+                    label = c("10 million t", "50 million t", "100 million t", "500 million t", "1 billion t"),
+                    guide = guide_colorsteps(barheight = unit(0.1, "in"), barwidth = unit(6, "in"))) +
+  theme_void() +
+  theme(
+    plot.title = element_text(color = "gray20", family = "serif", size = 20),
+    plot.caption = element_text(color = "gray20", size = 8, hjust = 0),
+    legend.position = "bottom",
+    legend.title = element_blank()
+  ) 
+
+map
+```
+
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The map tells us about how much greenhouse gas comes from making and eating food in different countries. In 2021, the countries causing the most emissions, over a billion tons, are the U.S., Brazil, India, Indonesia, and China. These are the same countries that were on the list from 1990 to 2021 for having the most greenhouse gas emissions from their food systems.</p>
+</section>
+")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+share_food_emissions <- read_csv("share-global-food-emissions.csv")
+
+share_emissions_plot <- share_food_emissions %>% 
+  filter(Year >= 1990, Entity %in% c("China", "Indonesia", "United States", "Brazil", 
+                                     "India", "Argentina", "Mexico")) %>% 
+  ggplot(aes(x = Year, y = `Share of global food emissions`, group = Entity, 
+             color = fct_reorder2(Entity, Year, `Share of global food emissions`))) +
+  geom_line() +
+  geom_point_interactive(aes(tooltip = `Share of global food emissions`, data_id = Entity)) +
+  labs(    
+    title = "Share of global food emissions",
+    subtitle = "Food system emissions quantified on the basis of food production, not consumption.",
+    caption = "Source:OurWorldInData.org/environmental-impacts-of-food ● CC BY"
+  ) +
+  scale_y_continuous(
+    breaks = c(0, 2, 4, 6, 8, 10, 12, 14),
+    labels = c("0" = "0%", "2" = "2%", "4" = "4%", "6" = "6%",
+               "8" = "8%", "10" = "10%", "12" = "12%", "14" = "14%")
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title = element_blank(),
+    axis.text = element_text(size = 3),
+    legend.title = element_blank(),
+    axis.line.x = element_line(color = "light gray", size = 0.75),
+    panel.grid.major.y = element_line(colour = "light gray", size=0.5, linetype = "dashed"),
+    panel.grid.major.x = element_blank(),
+    plot.margin = margin(1, 1, 1, 1, "cm")
+  )
+
+girafe(ggobj = share_emissions_plot)
+
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>This chart provides insights into how food production affects the environment, specifically focusing on greenhouse gas emissions. It illustrates the percentage of a country's emissions from food systems in comparison to the global total from 1990 to 2015. China's emissions steadily increased during this period, rising from 10% to 14%, making it the top contributor from 2005 to 2015. Brazil and Indonesia experienced fluctuations but ultimately reduced their shares to around 7% and 9% in 2015. The U.S. contributed between 7.5% and 10%, while India saw a slight increase from 5% to 6%. Argentina maintained a consistent 2%, and Mexico had the smallest share at around 1%. The graph highlights the intricate environmental impact of food systems, involving various activities from farming and land use changes to the entire supply chain, including transportation, packaging, processing, retail, cooking, and waste management. Importantly, these figures focus on emissions tied to food production, emphasizing the need for sustainable practices throughout the entire food production and distribution process to address their environmental impact.</p>
+</section>
+")
 ```
 
 
@@ -102,15 +209,18 @@ y = 1))
 cat("
 <section class=\"image-container\">
   <img src=\"tasty-food-arrangement-top-view.jpg\" style=\"width:100%;height:300px;object-fit:cover;\"/>
-  <h5 class=\"center-text-bg-img\">Food in Singapore</h5>
+  <h5 class=\"center-text-bg-img\">Food Waste in Singapore</h5>
   <p class=\"bottom-right-text-bg-img\">Image by [Freepik](https://www.freepik.com/free-photo/tasty-food-arrangement-top-view_20552615.htm#query=food%20packages&position=23&from_view=search&track=ais&uuid=93342a26-4a2a-4889-a4e0-fad38046c4af)</p>
 </section>
 
-<section id=\"Zooming into our home country\" class=\"container\" width=\"100%\">
-  <h3 class=\"text-center fw-bold my-5\">Singapore</h3>
-  <p>With increasing number of **food factories**, the number of food waste **increases**.</p>
+  <p>We keep asking the Earth for more stuff, make more things, and end up throwing away a lot. We're using up natural resources faster than they can come back, especially to make food that doesn't even get eaten.
+
+Rich countries like Singapore are a part of this. The graph shows more and **more food factories** in recent years. When we make **more food**, we also potentially **waste more**.</p>
 </section>
+<section id=\"Zooming into our home country Singapore\" class=\"container\" width=\"100%\">
+  <h3 class=\"text-center fw-bold my-5\">Zooming into our home country Singapore</h3>
 ")
+
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -125,85 +235,406 @@ spline_plot <- plot_ly(foodfactories_sg, x = ~year, y = ~no_of_food_factories, t
                        line = list(shape = 'spline'),
                        text = ~paste("Year: ", year, "<br>No of food factories: ", no_of_food_factories),
                        hoverinfo = 'text') %>%
-  layout(title = "Number of Food Factories Over Time",
+  layout(title = "Number of Food Factories Over Time (Spline Plot with Points)",
          xaxis = list(title = "Year"),
          yaxis = list(title = "Number of Food Factories"))
 
 # Display the interactive spline plot with points
-#spline_plot
+spline_plot
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The graph depicting the number of food factories across the years reveals a consistent upward trend, with a notable increase in 2020 from 1850 to 1940, marking a positive growth pattern. This steady expansion may be indicative of a resilient and growing food industry, potentially influenced by economic factors, population growth, and shifting consumer preferences. The successive yearly increments, such as in 2019 (1850 factories), 2018 (1802), 2017 (1755), and 2016 (1678), underscore a sustained positive trajectory. The substantial rise in 2020 could be linked to increased demand. However, this growth also raises considerations about the potential for food surplus and waste as increased production may outpace demand. </p>
+</section>
+")
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Reading the CSV files
+waste_03_22 <- read.csv('2003_2022_waste.csv')
+
+energy_stat <- read.csv('waste_energy_stat.csv')
+
+
+# Renaming columns and mutating the data to convert values from kilo-tonnes to tonnes
+clean_waste_03_22 <- waste_03_22 %>%
+  rename(
+    waste_type = "waste_type",
+    total_waste_generated_tonne = "total_generate_1k_tonnes",
+    total_waste_recycled_tonne = "total_recycled_1k_tonnes",
+    total_waste_not_recycled_tonne = "total_not_recycled_1k_tonnes",
+    year = "year"
+  ) %>%
+  mutate(
+    total_waste_generated_tonne = total_waste_generated_tonne * 1000,
+    total_waste_recycled_tonne = total_waste_recycled_tonne * 1000
+  )
+
+# Filtering waste_03_22 dataset for specific years and waste types
+wasteselected <- clean_waste_03_22 %>%
+  filter(year %in% 2003:2022,
+         waste_type %in% c("Plastics", "Ferrous Metals", "Non-Ferrous Metals", "Glass", "Food"))%>%
+  arrange(waste_type)
+
+  
+### Calculating and adding recycling rate into DataFrame for analysis.
+
+# Calculate recycling_rate and round to 2 decimal places
+clean_waste_03_22$recycling_rate <- round(
+  clean_waste_03_22$total_waste_recycled_tonne / clean_waste_03_22$total_waste_generated_tonne,2
+)
+
+### Calculating and adding wasting rate into DataFrame for analysis.
+
+# Calculate wasting_rate and round to 2 decimal places
+clean_waste_03_22$wasting_rate <- round(
+  1-clean_waste_03_22$recycling_rate,2
+)
+
+# Reading the CSV files
+waste_03_22 <- read.csv('2003_2022_waste.csv')
+
+# Renaming columns and mutating the data to convert values from kilo-tonnes to tonnes
+clean_waste_03_22 <- waste_03_22 %>%
+  rename(
+    waste_type = "waste_type",
+    total_waste_generated_tonne = "total_generate_1k_tonnes",
+    total_waste_recycled_tonne = "total_recycled_1k_tonnes",
+    total_waste_not_recycled_tonne = "total_not_recycled_1k_tonnes",
+    year = "year"
+  ) %>%
+  mutate(
+    total_waste_generated_tonne = total_waste_generated_tonne * 1000,
+    total_waste_recycled_tonne = total_waste_recycled_tonne * 1000
+  )
+
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Waste Visualization App"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("material", "Choose Material:", 
+                  choices = unique(clean_waste_03_22$waste_type),
+                  selected = "Plastics")
+    ),
+    mainPanel(
+      plotlyOutput("waste_plot")
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {
+  
+  # Filter data based on selected material
+  selected_data <- reactive({
+    clean_waste_03_22 %>%
+      filter(waste_type == input$material)
+  })
+  
+  # Render the plot
+  output$waste_plot <- renderPlotly({
+    gg <- ggplot(selected_data(), aes(x = year)) +
+      geom_line(aes(y = total_waste_generated_tonne, color = "Waste Generated"), size = 1) +
+      geom_line(aes(y = total_waste_recycled_tonne, color = "Waste Recycled"), size = 1) +
+      geom_line(aes(y = total_waste_not_recycled_tonne, color = "Waste Not Recycled"), size = 1) +
+      labs(title = paste("Waste Over Years -", input$material),
+           x = "Year", y = "Tonnes") +
+      theme_minimal()
+    
+    ggplotly(gg, tooltip = "text")
+  })
+}
+
+# Run the Shiny app
+shinyApp(ui, server)
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The Shiny interactive chart vividly illustrates the significant impact of food waste as a substantial contributor to overall waste in Singapore. With a considerable amount of food waste being generated, the visualization exposes a concerning trend where a substantial portion is not being effectively recycled. Instead, a high volume of food is disposed of, contributing to environmental concerns. The interactive features of the chart empower users to delve into the intricate details of waste management by exploring and selecting various materials. This exploration unveils the distinct quantities of each material being generated, disposed of, and recycled in Singapore, shedding light on the urgency of addressing food waste management practices for a more sustainable and environmentally conscious future. </p>
+</section>
+")
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+<section class=\"image-container\">
+  <img src=\"eco-concept-light-bulb-grow-grass.jpg\" style=\"width:100%;height:300px;object-fit:cover;\"/>
+  <h5 class=\"center-text-bg-img\">Resourceful Waste by Recycling </h5>
+  <p class=\"bottom-right-text-bg-img\">Image by [Freepik](https://www.freepik.com/free-photo/eco-concept-light-bulb-grow-grass_1010173.htm#query=energy&position=13&from_view=search&track=sph&uuid=c286c868-23bf-4a6f-bba7-5d858706e964)</p>
+</section>
+
+  <p>Imagine the transformative power of a collective commitment to recycling. Let's delve into Singapore's recycling and waste rates, envisioning a future where each small act of recycling contributes to a monumental impact. </p>
+</section>
+<section id=\"Zooming into our home country Singapore\" class=\"container\" width=\"100%\">
+  <h3 class=\"text-center fw-bold my-5\">What if we start recycling?</h3>
+")
+
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Read the CSV file
+clean_waste_03_22 <- read.csv('2003_2022_waste.csv') %>%
+  rename(
+    waste_type = "waste_type",
+    total_waste_generated_tonne = "total_generate_1k_tonnes",
+    total_waste_recycled_tonne = "total_recycled_1k_tonnes",
+    total_waste_not_recycled_tonne = "total_not_recycled_1k_tonnes",
+    year = "year"
+  ) %>%
+  mutate(
+    total_waste_generated_tonne = total_waste_generated_tonne * 1000,
+    total_waste_recycled_tonne = total_waste_recycled_tonne * 1000,
+    recycling_rate = round(total_waste_recycled_tonne / total_waste_generated_tonne, 2),
+    wasting_rate = round(1 - recycling_rate, 2)
+  )
+
+# Define UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Recycling and Wasting Rates Visualization App"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("material", "Choose Material:",
+                  choices = unique(clean_waste_03_22$waste_type),
+                  selected = "Plastics")
+    ),
+    mainPanel(
+      plotlyOutput("rate_plot")
+    )
+  )
+)
+
+# Define server logic for the Shiny app
+server <- function(input, output) {
+  
+  # Filter data based on selected material
+  selected_data <- reactive({
+    clean_waste_03_22 %>%
+      filter(waste_type == input$material)
+  })
+  
+  # Render the plot
+  output$rate_plot <- renderPlotly({
+    gg <- ggplot(selected_data(), aes(x = year)) +
+      geom_line(aes(y = recycling_rate, color = "Recycling Rate"), size = 1) +
+      geom_line(aes(y = wasting_rate, color = "Wasting Rate"), size = 1) +
+      labs(title = paste("Recycling and Wasting Rates Over Years -", input$material),
+           x = "Year", y = "Rate") +
+      theme_minimal()
+    
+    ggplotly(gg, tooltip = "text")
+  })
+}
+
+# Run the Shiny app
+shinyApp(ui, server)
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The Shiny interactive chart provides a comprehensive visualization of wasting and recycling rates for various types of waste. Notably, the lines representing the rates for food and plastics reveal a concerning trend—they do not intersect. This lack of intersection indicates that concerted efforts to recycle these common types of waste, namely food and plastics, are currently insufficient. The implications are significant, as effective recycling of these materials could have a substantial positive impact on waste management and environmental sustainability. </p>
+</section>
+")
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>A bit of information regarding this segment:
+  NUS researchers are at the forefront of addressing Singapore's food waste challenges, with approximately 10% of total waste attributed to discarded food and a recycling rate of around 14%. Headed by Associate Professor Tong Yen Wah from NUS Faculty of Engineering's Department of Chemical and Biomolecular Engineering, a collaboration with Shanghai Jiao Tong University has led to the development of an innovative anaerobic digester system. This system efficiently converts food scraps into electrical energy, heat, and fertilizers, forming a self-sustaining cycle as the generated electricity and heat power the entire process.
+
+Operating like a biochemical stomach, the anaerobic digester breaks down organic matter in an oxygen-free environment. Designed by Dr. Zhang Jingxin from NUS Environmental Research Institute (NERI), the system utilizes anaerobic micro-organisms to convert food waste into biogas, subsequently transformed into heat and electrical energy. The repurposed heat is used to produce hot water, maintaining the optimal temperature for digestion. Every component of the system, from sensors to ventilating fans, is powered by electricity generated within.
+
+According to the team's calculations, one tonne of food waste can generate between 200 to 400 kilowatt-hours of electricity, contingent on waste composition. The anaerobic digester also yields nutrient-rich digestate, converting about 80% of fed food waste, which can be further processed into liquid fertilizers for agricultural use. </p>
+</section>
+")
 ```
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(tidyverse)
+# Load the necessary libraries
 library(plotly)
 
-createInteractiveMap <- function(data_file, map_resolution = "world") {
-  # Import the data with coordinates
-  world_map <- map_data(map_resolution)
-  accesstonet <- read.csv(data_file)
+# Read the CSV file
+data <- read.csv('energy_saved_stat.csv')
 
-  # Check column names in accesstonet
-  print(names(accesstonet))
+# Create an interactive doughnut chart
+plot <- plot_ly(data, 
+                labels = ~waste_type, 
+                values = ~total_energy_saved2,
+                type = 'pie',
+                hole = 0.4,  # Set the size of the hole for a doughnut effect
+                textinfo = 'label+percent',
+                hoverinfo = 'text+value',
+                text = ~paste("Material: ", waste_type, "<br>Energy Saved: ", total_energy_saved2)) %>%
+  layout(title = "Total Energy Saved From Waste Disposed Instead of Recycling",
+         annotations = list(text = "Possible Energy Saved ",
+                            showarrow = FALSE,
+                            x = 0.5,
+                            y = 0.5,
+                            xref = "paper",
+                            yref = "paper"))
 
-  country_column <- case_when(
-  "Entity" %in% names(accesstonet) ~ "Entity",
-  "region" %in% names(accesstonet) ~ "region",
-  TRUE ~ NA_character_
-)
+# Display the plot
+plot
+```    
 
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The donut chart visually represents the potential energy savings achievable through recycling various waste types, encompassing food waste. The concentric circles illustrate the proportionate distribution of energy savings, with each segment representing a specific waste category. This insightful visualization provides a clear overview of the comparative contributions of different waste types to the overall potential energy conservation. Specifically, the chart emphasizes the significant role of recycling, including the recycling of food waste, in harnessing and optimizing energy resources. </p>
+</section>
+")
+```
 
-  map_data <- accesstonet %>% rename(region := !!country_column)
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Read the CSV file
+data <- read.csv('energy_saved_stat.csv')
 
-  map <- left_join(world_map, map_data, by = "region")
+# Create an interactive scatter plot
+plot <- plot_ly(data, 
+                x = ~year, 
+                y = ~total_energy_saved, 
+                size = ~total_waste_recycled_tonnes,
+                color = ~waste_type,
+                text = ~paste("Material: ", waste_type, "<br>Year: ", year, "<br>Total Waste Recycled: ", total_waste_recycled_tonnes, "<br>Total Energy Saved: ", total_energy_saved),
+                sizes = c(5, 100),  # Set the range of point sizes
+                marker = list(sizemode = 'diameter'),
+                hoverinfo = 'text') %>%
+  layout(title = "Interactive Scatter Plot of Total Energy Saved by Year",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Total Energy Saved"))
 
-  emissions_from_food <- read.csv("emissions-from-food.csv")
-
-  emissions_from_food <- emissions_from_food %>% 
-    mutate(country = case_when(Entity == "United States" ~ "USA",
-                               Entity == "United Kingdom" ~ "UK",
-                               Entity == "Czechia" ~ "Czech Republic",
-                               Entity == "Democratic Republic of Congo" ~ "Democratic Republic of the Congo",
-                               TRUE ~ Entity))
-
-  world_emissions_map <- emissions_from_food %>% 
-  filter(country != "World") %>% 
-  left_join(map, by = c("country" = "region", "Year"))
-
-
-  # Plot
-  map_plot <- world_emissions_map %>% 
-    filter(Year == 2015) %>% 
-    ggplot(aes(x = long, y = lat, group = group)) +
-    geom_polygon_interactive(
-      aes(fill = `Food_emissions_by_country`, 
-          text = paste("Country: ",'country', "<br>Food Emissions: ",'Food_emissions_by_country')), 
-      color = "black", size = 0.2
-    ) +
-    scale_fill_binned(
-      low = "darkseagreen1", high = "seagreen", 
-      breaks = c(10000000, 50000000, 100000000, 500000000, 1000000000),
-      label = c("10 million t", "50 million t", "100 million t", "500 million t", "1 billion t")
-    ) +
-    theme_void()
-
-  # Convert ggplot to plotly
-  map_plotly <- ggplotly(map_plot)
-
-  # Add a caption using layout
-  map_plotly <- map_plotly %>% layout(
-    annotations = list(
-      text = "Source: Crippa et al. (2021). Food systems are responsible for a third of global anthropogenic GHG emissions. Nature Food. OurWorldInData.org/environmental-impacts-of-food ● CC BY",
-      showarrow = FALSE, x = 0, y = -0.1, xref = "paper", yref = "paper"
-    )
-  )
-
-  return(map_plotly)
-}
-
-# Interactive Map
-interactiveMap <- createInteractiveMap("emissions-from-food.csv")
-interactiveMap
+# Display the plot
+plot
 
 ```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The scatter graph provides a comprehensive perspective on the potential energy savings associated with recycling various types of waste, extending beyond food waste. It highlights the broader impact of recycling, emphasizing the significance of considering diverse materials, such as paper, in our efforts to conserve energy. The placement of data points across the graph effectively communicates the energy-saving potential of different waste materials. The visual representation serves as a compelling reminder that materials often disposed of without much thought, including paper, have substantial contributions to energy conservation when recycled. This graph underscores the importance of holistic waste management practices, encouraging a mindful approach to recycling various materials to maximize overall energy savings.</p>
+</section>
+")
+```
+
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+foodWasteData <- read_csv("Food Waste data and research - by country.csv")
+
+# Create new column for combined estimate in tonnes/year
+foodWasteData <- mutate(foodWasteData, combined_estimate_tonnes_per_year = foodWasteData$`Household estimate (tonnes/year)` + foodWasteData$`Retail estimate (tonnes/year)` + foodWasteData$`Food service estimate (tonnes/year)`)
+foodWasteData <- foodWasteData[, c(1,2,13,3,4,5,6,7,8,9,10,11,12)]
+
+# Changing column names to make them lowercase and include underscores
+new_col_names <- c("country", "combined_estimate_kpcpy", "combined_estimate_tpy", "household_estimate_kpcpy", "household_estimate_tpy", "retail_estimate_kpcpy", "retail_estimate_tpy", "food_service_estimate_kpcpy", "food_service_estimate_tpy", "estimate_confidence", "m49_code", "region", "source")
+names(foodWasteData) <- new_col_names
+
+# Get source column out of the way
+dataSources <- sqldf("SELECT country, m49_code, source FROM foodWasteData")
+foodWasteData<- foodWasteData[, -13]
+
+# Load dataset linking M49 codes to ISO-alpha3 codes and join with foodWasteData
+codesData <- read_csv("M49.csv")
+names(codesData)[names(codesData) == 'M49 code'] <- 'm49_code'
+names(codesData)[names(codesData) == 'ISO-alpha3 code'] <- 'iso_alpha3_code'
+codesData <- sqldf("SELECT m49_code, iso_alpha3_code FROM codesData")
+foodWasteData <- sqldf("SELECT * FROM foodWasteData INNER JOIN codesData 
+                 ON foodWasteData.m49_code = codesData.m49_code")
+
+# Join population dataset with foodWasteData using ISO-alpha3 codes
+populationData <- read_csv("2021_population.csv")
+names(populationData)[names(populationData) == 'iso_code'] <- 'iso_alpha3_code'
+names(populationData)[names(populationData) == '2021_last_updated'] <- 'population_2021'
+populationData <- sqldf("SELECT iso_alpha3_code, population_2021 FROM populationData")
+foodWasteData <- merge(foodWasteData, populationData, by = "iso_alpha3_code", all.x = TRUE)
+# Reorder foodWasteData and remove unnecessary duplicate m49 column
+foodWasteData <- foodWasteData[, -14]
+foodWasteData <- foodWasteData[, c(2,3,4,5,6,7,8,9,10,11,12,1,13,14)]
+
+
+# Look for correlation between population size and total food waste
+# Create the scatterplot with a regression line
+ggplot(foodWasteData, aes(x = population_2021, y = combined_estimate_tpy)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +  # Add regression line
+  labs(
+    title = "Population vs. Total Food Waste",
+    x = "Population (2021)",
+    y = "Combined Food Waste Estimate (tonnes/year)"
+  ) +
+  theme_minimal()
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+foodWasteData <- read_csv("Food Waste data and research - by country.csv")
+
+# Create new column for combined estimate in tonnes/year
+foodWasteData <- mutate(foodWasteData, combined_estimate_tonnes_per_year = foodWasteData$`Household estimate (tonnes/year)` + foodWasteData$`Retail estimate (tonnes/year)` + foodWasteData$`Food service estimate (tonnes/year)`)
+foodWasteData <- foodWasteData[, c(1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)]
+
+# Changing column names to make them lowercase and include underscores
+new_col_names <- c("country", "combined_estimate_kpcpy", "combined_estimate_tpy", "household_estimate_kpcpy", "household_estimate_tpy", "retail_estimate_kpcpy", "retail_estimate_tpy", "food_service_estimate_kpcpy", "food_service_estimate_tpy", "estimate_confidence", "m49_code", "region", "source")
+names(foodWasteData) <- new_col_names
+
+# Get the source column out of the way
+dataSources <- sqldf("SELECT country, m49_code, source FROM foodWasteData")
+foodWasteData <- foodWasteData[, -13]
+
+# Load the dataset linking M49 codes to ISO-alpha3 codes and join with foodWasteData
+codesData <- read_csv("M49.csv")
+names(codesData)[names(codesData) == 'M49 code'] <- 'm49_code'
+names(codesData)[names(codesData) == 'ISO-alpha3 code'] <- 'iso_alpha3_code'
+codesData <- sqldf("SELECT m49_code, iso_alpha3_code FROM codesData")
+foodWasteData <- sqldf("SELECT * FROM foodWasteData INNER JOIN codesData 
+                 ON foodWasteData.m49_code = codesData.m49_code")
+
+# Join the population dataset with foodWasteData using ISO-alpha3 codes
+populationData <- read_csv("2021_population.csv")
+names(populationData)[names(populationData) == 'iso_code'] <- 'iso_alpha3_code'
+names(populationData)[names(populationData) == '2021_last_updated'] <- 'population_2021'
+populationData <- sqldf("SELECT iso_alpha3_code, population_2021 FROM populationData")
+foodWasteData <- merge(foodWasteData, populationData, by = "iso_alpha3_code", all.x = TRUE)
+# Reorder foodWasteData and remove unnecessary duplicate m49 column
+foodWasteData <- foodWasteData[, -14]
+foodWasteData <- foodWasteData[, c(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 13, 14)]
+
+# Create the scatter plot with a regression line using plotly
+plot_ly(foodWasteData, x = ~population_2021, y = ~combined_estimate_tpy, text = ~paste("Country: ", country, "<br>Population: ", population_2021, "<br>Food Waste: ", combined_estimate_tpy)) %>%
+  add_markers() %>%
+  add_lines(type = "scatter", mode = "lines", line = list(color = 'blue')) %>%
+  layout(
+    title = "Population vs. Total Food Waste",
+    xaxis = list(title = "Population (2021)"),
+    yaxis = list(title = "Combined Food Waste Estimate (tonnes/year)")
+  )
+
+```
+
+```{r, results='asis', echo=FALSE}
+cat("
+  <p><p>The graph indicates a strong relationship between a country's population size and its total food waste, with an r^2 regression coefficient of approximately 0.966. This implies that 96.6% of the variability in a nation's overall food waste can be accounted for by its population size. These results align precisely with my hypothesis that a country's total food waste is influenced by its population size.
+
+To conclude, **if every individual takes responsibility and contributes to reducing food waste through recycling and mindful consumption, we have the power to make a significant impact.**
+
+By doing so, not only can we decrease the amount of food discarded, but we can also save substantial amounts of energy.
+
+<section id=\"Zooming into our home country Singapore\" class=\"container\" width=\"100%\">
+  <h3 class=\"text-center fw-bold my-5\">It's a collective effort that holds the key to a more sustainable and energy-efficient future for our planet.</h3>
+  </p>
+</section>
+")
+```
+
+
+
+
+
+
+
 
 

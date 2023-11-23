@@ -20,8 +20,7 @@ website:
         file: about.qmd
       - text: "Final Project"
         file: finalproject.qmd
-      - text: "Project NM2207"
-        file: project.qmd
+    
 
         
   #footer

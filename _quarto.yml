@@ -22,23 +22,6 @@ website:
         file: finalproject.qmd
       - text: "Project NM2207"
         file: project.qmd
-        
-  sidebar:
-      style: "floating"
-      background: light
-      contents:
-        - href: index.qmd#whatIsFW
-          text: How severe is food waste currently?
-        - href: index.qmd#totalFWbyRegion
-          text: How much food waste is the world generating?
-        - href: index.qmd#worldMap 
-          text: Which Country Generated the most food waste?
-        - href: index.qmd#top10-bottom10
-          text: What are the Top 10 and Bottom 10 Countries for Combined<br>per-capita Food Waste?
-        - href: index.qmd#closerLook
-          text: Let's take a closer look in our home country
-        - href: index.qmd#references
-          text: References
 
         
   #footer
@@ -58,7 +41,7 @@ execute:
 format:
   html:
     theme: 
-      - theme.scss
+    - theme.scss
     fontsize: 1.35em
     toc: true
     fig-cap-location: margin
@@ -69,5 +52,11 @@ format:
       body-width: 900px
       margin-width: 200px
       gutter-width: 1.5rem
+    css: styles.css
+
+    
+      
+    
+    
 
 editor: visual

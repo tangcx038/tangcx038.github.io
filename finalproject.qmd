@@ -19,6 +19,14 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 library(quarto)
+library(RColorBrewer)
+library(ggiraph)
+```
+
+```{=html}
+<link rel="stylesheet" href="./_site/styles.css">
+
+
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -30,7 +38,7 @@ cat("
 </section>
 
 <section id=\"introduction\" class=\"container\" width=\"100%\">
-  <h4 class=\"text-center fw-bold my-4\">Introduction</h4>
+  <h3 class=\"text-center fw-bold my-5\">Introduction</h3>
   <p>Food comes from a long journey, starting with the farmer and ending up in our homes. This journey, called the supply chain, uses a lot of the Earth's resources. When we sit down to eat, we get to enjoy the amazing result. Tradition and good cooking bring us tasty, nourishing, joyful, passionate, and life-giving meals. However, the sad truth is that we throw away a ton of our food—loads of it! And when we do that, we're also tossing away all the valuable resources that were essential to make it in the first place.</p>
 
   <p>**WASTING FOOD IS WASTING AGRICULTURAL LAND.** The food produced but wasted globally every year requires 1.4 billion hectares of land, which is close to 30% of the world agricultural land area (UNEP, 2022).</p>
@@ -39,53 +47,14 @@ cat("
 
   <p>**WASTING FOOD IS WASTING MONEY.** Besides its environmental cost, food wastage also represents a loss of economic value. On a global scale, the economic cost of the overall amount of food wastage is about $US 750 billion, equivalent to the GDP of Switzerland (FAO, 2011).</p>
 
-  <h4 id=\"Wondering how much food we waste\" class=\"text-center fw-bold my-4\">How much **food is wasted?**</h4>
+  <h3 id=\"\" class=\"text-center fw-bold my-5\">Wondering how much <div class=\"foodwasteword\">food is wasted across the world?</div></h3>
   <p>According to the **United Nations' Food and Agricultural Organisation of United Nation (FAO)**, an estimation of all the food produced every year for human consumption in the world, one-third does not reach our stomachs.</p>
 </section>
 ")
 ```
 
 
-```{r}
-## Libraries 
-library(tidyverse)
-library(maps)
-library(sf)
-library(shiny)
-library(ggplot2)
-library(dplyr)
-library(plotly)
-
-
-createInteractiveMap <- function(data_file, map_resolution = "world") {
-
-
-  # Import the data with coordinates
-  world_map <- map_data(map_resolution)
-  accesstonet <- read.csv(data_file)
-  map_data <- accesstonet %>% rename(region = country)
-
-  map <- left_join(world_map, map_data, by = "Country")
-
-  # Create the ggplot object
-  gg <- ggplot(map, aes(long, lat, group = group, text = paste("Country: ", country, "<br>Annual Kg per Capita: ", FoodWaste2021kgcapitayear))) +
-    geom_polygon(aes(fill = FoodWaste2021kgcapitayear), color = "white", size = 0.03) +
-    scale_fill_gradient(low = "lightgreen", high = "darkgreen") +
-    theme_minimal()
-
-  # Convert ggplot to plotly
-  map_plotly <- ggplotly(gg, tooltip = "text")
-
-  # Display the interactive map
-  return(map_plotly)
-}
-
-## Libraries 
-library(tidyverse)
-library(maps)
-library(sf)
-library(plotly)
-
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 createInteractiveMap <- function(data_file, map_resolution = "world") {
   # Import the data with coordinates
   world_map <- map_data(map_resolution)
@@ -123,14 +92,118 @@ y = 1))
   return(map_plotly)
 }
 
-
+# Interactive Map
+#interactiveMap <- createInteractiveMap("food-waste-by-country-2023.csv")
+#interactiveMap
 ```
 
 
-```{r}
-# Usage
-interactiveMap <- createInteractiveMap("food-waste-by-country-2023.csv")
+```{r, results='asis', echo=FALSE}
+cat("
+<section class=\"image-container\">
+  <img src=\"tasty-food-arrangement-top-view.jpg\" style=\"width:100%;height:300px;object-fit:cover;\"/>
+  <h5 class=\"center-text-bg-img\">Food in Singapore</h5>
+  <p class=\"bottom-right-text-bg-img\">Image by [Freepik](https://www.freepik.com/free-photo/tasty-food-arrangement-top-view_20552615.htm#query=food%20packages&position=23&from_view=search&track=ais&uuid=93342a26-4a2a-4889-a4e0-fad38046c4af)</p>
+</section>
+
+<section id=\"Zooming into our home country\" class=\"container\" width=\"100%\">
+  <h3 class=\"text-center fw-bold my-5\">Singapore</h3>
+  <p>With increasing number of **food factories**, the number of food waste **increases**.</p>
+</section>
+")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Load the required library
+library(plotly)
+
+# Read the CSV file
+foodfactories_sg <- read.csv("LicensedFoodFactoriesEndOfPeriodAnnual.csv")
+
+# Create an interactive spline plot with points
+spline_plot <- plot_ly(foodfactories_sg, x = ~year, y = ~no_of_food_factories, type = 'scatter', mode = 'lines+markers',
+                       line = list(shape = 'spline'),
+                       text = ~paste("Year: ", year, "<br>No of food factories: ", no_of_food_factories),
+                       hoverinfo = 'text') %>%
+  layout(title = "Number of Food Factories Over Time",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Number of Food Factories"))
+
+# Display the interactive spline plot with points
+#spline_plot
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(plotly)
+
+createInteractiveMap <- function(data_file, map_resolution = "world") {
+  # Import the data with coordinates
+  world_map <- map_data(map_resolution)
+  accesstonet <- read.csv(data_file)
+
+  # Check column names in accesstonet
+  print(names(accesstonet))
+
+  country_column <- case_when(
+  "Entity" %in% names(accesstonet) ~ "Entity",
+  "region" %in% names(accesstonet) ~ "region",
+  TRUE ~ NA_character_
+)
+
+
+  map_data <- accesstonet %>% rename(region := !!country_column)
+
+  map <- left_join(world_map, map_data, by = "region")
+
+  emissions_from_food <- read.csv("emissions-from-food.csv")
+
+  emissions_from_food <- emissions_from_food %>% 
+    mutate(country = case_when(Entity == "United States" ~ "USA",
+                               Entity == "United Kingdom" ~ "UK",
+                               Entity == "Czechia" ~ "Czech Republic",
+                               Entity == "Democratic Republic of Congo" ~ "Democratic Republic of the Congo",
+                               TRUE ~ Entity))
+
+  world_emissions_map <- emissions_from_food %>% 
+  filter(country != "World") %>% 
+  left_join(map, by = c("country" = "region", "Year"))
+
+
+  # Plot
+  map_plot <- world_emissions_map %>% 
+    filter(Year == 2015) %>% 
+    ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon_interactive(
+      aes(fill = `Food_emissions_by_country`, 
+          text = paste("Country: ",'country', "<br>Food Emissions: ",'Food_emissions_by_country')), 
+      color = "black", size = 0.2
+    ) +
+    scale_fill_binned(
+      low = "darkseagreen1", high = "seagreen", 
+      breaks = c(10000000, 50000000, 100000000, 500000000, 1000000000),
+      label = c("10 million t", "50 million t", "100 million t", "500 million t", "1 billion t")
+    ) +
+    theme_void()
+
+  # Convert ggplot to plotly
+  map_plotly <- ggplotly(map_plot)
+
+  # Add a caption using layout
+  map_plotly <- map_plotly %>% layout(
+    annotations = list(
+      text = "Source: Crippa et al. (2021). Food systems are responsible for a third of global anthropogenic GHG emissions. Nature Food. OurWorldInData.org/environmental-impacts-of-food ● CC BY",
+      showarrow = FALSE, x = 0, y = -0.1, xref = "paper", yref = "paper"
+    )
+  )
+
+  return(map_plotly)
+}
+
+# Interactive Map
+interactiveMap <- createInteractiveMap("emissions-from-food.csv")
 interactiveMap
+
 ```
 
 

@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -93,14 +59,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/ionrangeslider-javascript-2.3.1/js/ion.rangeSlider.min.js"></script>
-<script src="site_libs/strftime-0.9.2/strftime-min.js"></script>
-<link href="site_libs/ionrangeslider-css-2.3.1/css/ion.rangeSlider.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -133,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Final Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./project.html" rel="" target="">
+    <a class="nav-link" href="./project.qmd" rel="" target="">
  <span class="menu-text">Project NM2207</span></a>
   </li>  
 </ul>
@@ -142,75 +106,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">FINAL PROJECT</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#whatIsFW" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How severe is food waste currently?</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#totalFWbyRegion" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How much food waste is the world generating?</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#worldMap" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Which Country Generated the most food waste?</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#top10-bottom10" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What are the Top 10 and Bottom 10 Countries for Combined<br>per-capita Food Waste?</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#closerLook" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Let’s take a closer look in our home country</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html#references" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#shiny-documents" id="toc-shiny-documents" class="nav-link active" data-scroll-target="#shiny-documents">Shiny Documents</a></li>
-  <li><a href="#inputs-and-outputs" id="toc-inputs-and-outputs" class="nav-link" data-scroll-target="#inputs-and-outputs">Inputs and Outputs</a>
-  <ul class="collapse">
-  <li><a href="#testing-interactive-graph" id="toc-testing-interactive-graph" class="nav-link" data-scroll-target="#testing-interactive-graph">TESTING INTERACTIVE GRAPH</a></li>
-  </ul></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#convert-ggplot-to-plotly" id="toc-convert-ggplot-to-plotly" class="nav-link active" data-scroll-target="#convert-ggplot-to-plotly">Convert ggplot to plotly</a></li>
+  <li><a href="#add-a-caption" id="toc-add-a-caption" class="nav-link" data-scroll-target="#add-a-caption">Add a caption</a></li>
   </ul>
 </nav>
     </div>
@@ -234,56 +141,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div id="about-block">
+<link rel="stylesheet" href="./_site/styles.css">
 
-</div>
-<p>ghehrgiwjekgekg</p>
-<p>I am a undergraduate at the National University of Singapore, currently in my third year studying Architecture. My passion lies in design and creativity. While my primary focus has been on architectural concepts and aesthetics, I am also enthusiastic about expanding my skill set to include coding and web development.</p>
-<p>My goal is to acquire coding skills that will empower me to design and develop my own webpage. I am thrilled about the prospect of merging architectural design principles with interactive and user-friendly web interfaces.</p>
-<p>Explore my website to discover more! Don’t hesitate to reach out if you have opportunities for internships, learning experiences in webpage development, or positions in architecture firms, art studios, or any design-related fields. I’m eager to discuss potential collaborations and opportunities, and my <a href="mailto:e0775098@u.nus.edu">inbox</a>is always open for exciting ventures in these domains.</p>
-<section id="shiny-documents" class="level2">
-<h2 class="anchored" data-anchor-id="shiny-documents">Shiny Documents</h2>
-<p>This Quarto document is made interactive using Shiny. Interactive documents allow readers to modify parameters and see the results immediately. Learn more about Shiny interactive documents at <a href="https://quarto.org/docs/interactive/shiny/" class="uri">https://quarto.org/docs/interactive/shiny/</a>.</p>
-</section>
-<section id="inputs-and-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="inputs-and-outputs">Inputs and Outputs</h2>
-<p>You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change. This demonstrates how a standard R plot can be made interactive:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LuJKrTGKFpI?si=utpm_zTQ-OrVUGp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">"bins"</span>, <span class="st">"Number of bins:"</span>, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">50</span>, <span class="at">value =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="bins-label" for="bins">Number of bins:</label>
-<input class="js-range-slider" id="bins" data-skin="shiny" data-min="1" data-max="50" data-from="30" data-step="1" data-grid="true" data-grid-num="9.8" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="shiny-plot-output html-fill-item" id="distPlot" style="width:100%;height:400px;"></div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sliderInput</span>(<span class="st">"bins"</span>, <span class="st">"Number of bins:"</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">50</span>, <span class="at">value =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="form-group shiny-input-container">
-<label class="control-label" id="bins-label" for="bins">Number of bins:</label>
-<input class="js-range-slider" id="bins" data-skin="shiny" data-min="1" data-max="50" data-from="30" data-step="1" data-grid="true" data-grid-num="9.8" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number">
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotOutput</span>(<span class="st">"distPlot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="shiny-plot-output html-fill-item" id="distPlot" style="width:100%;height:400px;"></div>
-</div>
-</div>
-<div class="cell">
 
-</div>
-<section id="testing-interactive-graph" class="level3">
-<h3 class="anchored" data-anchor-id="testing-interactive-graph">TESTING INTERACTIVE GRAPH</h3>
 <section class="image-container">
-<img src="src/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table.jpg" style="width:100%;height:300px;object-fit:cover;">
+<img src="delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table.jpg" style="width:100%;height:300px;object-fit:cover;">
 <h5 class="center-text-bg-img anchored">
 Unveiling the true severity of food waste
 </h5>
@@ -292,9 +154,9 @@ Image by <a href="https://www.freepik.com/free-photo/close-up-hand-holding-woode
 </p>
 </section>
 <section id="introduction" class="container" width="100%">
-<h4 class="text-center fw-bold my-4 anchored">
+<h3 class="text-center fw-bold my-5 anchored">
 Introduction
-</h4>
+</h3>
 <p>
 Food comes from a long journey, starting with the farmer and ending up in our homes. This journey, called the supply chain, uses a lot of the Earth’s resources. When we sit down to eat, we get to enjoy the amazing result. Tradition and good cooking bring us tasty, nourishing, joyful, passionate, and life-giving meals. However, the sad truth is that we throw away a ton of our food—loads of it! And when we do that, we’re also tossing away all the valuable resources that were essential to make it in the first place.
 </p>
@@ -307,96 +169,50 @@ Food comes from a long journey, starting with the farmer and ending up in our ho
 <p>
 <strong>WASTING FOOD IS WASTING MONEY.</strong> Besides its environmental cost, food wastage also represents a loss of economic value. On a global scale, the economic cost of the overall amount of food wastage is about $US 750 billion, equivalent to the GDP of Switzerland (FAO, 2011).
 </p>
-<h4 id="Wondering how much food we waste" class="text-center fw-bold my-4 anchored">
-How much <strong>food is wasted?</strong>
-</h4>
+<h3 id="" class="text-center fw-bold my-5 anchored">
+Wondering how much
+<div class="foodwasteword">
+food is wasted across the world?
+</div>
+</h3>
 <p>
 According to the <strong>United Nations’ Food and Agricultural Organisation of United Nation (FAO)</strong>, an estimation of all the food produced every year for human consumption in the world, one-third does not reach our stomachs.
 </p>
 </section>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Libraries </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>createInteractiveMap <span class="ot">&lt;-</span> <span class="cf">function</span>(data_file, <span class="at">map_resolution =</span> <span class="st">"world"</span>) {</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Import the data with coordinates</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(map_resolution)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  accesstonet <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(data_file)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  map_data <span class="ot">&lt;-</span> accesstonet <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">region =</span> country)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  map <span class="ot">&lt;-</span> <span class="fu">left_join</span>(world_map, map_data, <span class="at">by =</span> <span class="st">"Country"</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create the ggplot object</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(map, <span class="fu">aes</span>(long, lat, <span class="at">group =</span> group, <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">"Country: "</span>, country, <span class="st">"&lt;br&gt;Annual Kg per Capita: "</span>, FoodWaste2021kgcapitayear))) <span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> FoodWaste2021kgcapitayear), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.03</span>) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightgreen"</span>, <span class="at">high =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert ggplot to plotly</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  map_plotly <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(gg, <span class="at">tooltip =</span> <span class="st">"text"</span>)</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Display the interactive map</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(map_plotly)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="do">## Libraries </span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>createInteractiveMap <span class="ot">&lt;-</span> <span class="cf">function</span>(data_file, <span class="at">map_resolution =</span> <span class="st">"world"</span>) {</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Import the data with coordinates</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(map_resolution)</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  accesstonet <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(data_file)</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  map_data <span class="ot">&lt;-</span> accesstonet <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">region =</span> country)</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  map <span class="ot">&lt;-</span> <span class="fu">left_join</span>(world_map, map_data, <span class="at">by =</span> <span class="st">"region"</span>)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create the ggplot object</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(map, <span class="fu">aes</span>(long, lat, <span class="at">group =</span> group, <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">"Country: "</span>, region, <span class="st">"&lt;br&gt;Annual Kg per Capita: "</span>, FoodWaste2021kgcapitayear))) <span class="sc">+</span></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> FoodWaste2021kgcapitayear), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.03</span>) <span class="sc">+</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightgreen"</span>, <span class="at">high =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert ggplot to plotly with specified width and height</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  map_plotly <span class="ot">&lt;-</span> <span class="fu">ggplotly</span>(gg, <span class="at">tooltip =</span> <span class="st">"text"</span>, <span class="at">width =</span> <span class="dv">1000</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set scrollZoom to FALSE</span></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  map_plotly<span class="sc">$</span>x<span class="sc">$</span>layout<span class="sc">$</span>updatemenus <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">type =</span> <span class="st">"zoom"</span>,</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="at">showactive =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="at">buttons =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">args =</span> <span class="fu">list</span>(<span class="st">"zoomType"</span>, <span class="st">"zoomin"</span>),</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="at">label =</span> <span class="st">"Zoom In"</span>,</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="at">method =</span> <span class="st">"relayout"</span>),</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">args =</span> <span class="fu">list</span>(<span class="st">"zoomType"</span>, <span class="st">"zoomout"</span>),</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="at">label =</span> <span class="st">"Zoom Out"</span>,</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="at">method =</span> <span class="st">"relayout"</span>)),</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="at">direction =</span> <span class="st">"left"</span>,</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="at">pad =</span> <span class="fu">list</span>(<span class="at">r =</span> <span class="dv">10</span>, <span class="at">t =</span> <span class="dv">87</span>),</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="at">showactive =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="at">type =</span> <span class="st">"buttons"</span>,</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="fl">0.1</span>,</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="dv">1</span>))</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Display the interactive map</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(map_plotly)</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
+<section class="image-container">
+<img src="tasty-food-arrangement-top-view.jpg" style="width:100%;height:300px;object-fit:cover;">
+<h5 class="center-text-bg-img anchored">
+Food in Singapore
+</h5>
+<p class="bottom-right-text-bg-img">
+Image by <a href="https://www.freepik.com/free-photo/tasty-food-arrangement-top-view_20552615.htm#query=food%20packages&amp;position=23&amp;from_view=search&amp;track=ais&amp;uuid=93342a26-4a2a-4889-a4e0-fad38046c4af">Freepik</a>
+</p>
 </section>
+<section id="Zooming into our home country" class="container" width="100%">
+<h3 class="text-center fw-bold my-5 anchored">
+Singapore
+</h3>
+<p>
+With increasing number of <strong>food factories</strong>, the number of food waste <strong>increases</strong>.
+</p>
 </section>
-<section id="usage" class="level1">
-<h1>Usage</h1>
-<p>interactiveMap &lt;- createInteractiveMap(“food-waste-by-country-2023.csv”) interactiveMap</p>
-<hr>
+<div class="cell">
+
+</div>
+<p>emissions_from_food &lt;- read_csv(“emissions-from-food.csv”)</p>
+<p>world_emissions_map &lt;- emissions_from_food %&gt;% filter(country != “World”) %&gt;% left_join(world_map, by = c(“country” = “region”))</p>
+<p>map &lt;- world_emissions_map %&gt;% filter(Year == 2015) %&gt;% ggplot(aes(x = long, y = lat, group = group)) + geom_polygon_interactive(aes(fill = <code>Food emissions by country</code>, text = paste(“Country:”, country, “<br>Food Emissions:”, <code>Food emissions by country</code>)), color = “black”, size = 0.2) + labs( title = “Greenhouse gas emissions from food systems, 2015” ) + scale_fill_binned(low = “darkseagreen1”, high = “seagreen”, breaks = c(10000000, 50000000, 100000000, 500000000, 1000000000), label = c(“10 million t”, “50 million t”, “100 million t”, “500 million t”, “1 billion t”), guide = guide_colorsteps(barheight = unit(0.1, “in”), barwidth = unit(6, “in”))) + theme_void() + theme( plot.title = element_text(color = “gray20”, family = “serif”, size = 20), legend.position = “bottom”, legend.title = element_blank() )</p>
+<section id="convert-ggplot-to-plotly" class="level1">
+<h1>Convert ggplot to plotly</h1>
+<p>map &lt;- ggplotly(map)</p>
+</section>
+<section id="add-a-caption" class="level1">
+<h1>Add a caption</h1>
+<p>map &lt;- map %&gt;% layout(annotations = list(text = “Source: Crippa et al.&nbsp;(2021). Food systems are responsible for a third of global anthropogenic GHG emissions. Nature Food. OurWorldInData.org/environmental-impacts-of-food ● CC BY”, showarrow = FALSE, x = 0, y = -0.1, xref = “paper”, yref = “paper”))</p>
+<p>map</p>
 
 
 </section>

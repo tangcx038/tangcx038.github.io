@@ -38,8 +38,7 @@ execute:
 
 format:
   html:
-    theme: 
-    - theme.scss
+    theme: Journal
     fontsize: 1.35em
     toc: true
     fig-cap-location: margin

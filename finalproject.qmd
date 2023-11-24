@@ -348,6 +348,7 @@ server <- function(input, output) {
 # Run the Shiny app
 shinyApp(ui, server)
 ```
+<iframe height="400" width="100%" frameborder="no" src="https://tangcx038.shinyapps.io/shiny1/"> </iframe>
 
 ```{r, results='asis', echo=FALSE}
 cat("
@@ -429,7 +430,6 @@ server <- function(input, output) {
 # Run the Shiny app
 shinyApp(ui, server)
 ```
-<iframe height="400" width="100%" frameborder="no" src="https://tangcx038.shinyapps.io/shiny1/"> </iframe>
 
 ```{r, results='asis', echo=FALSE}
 cat("

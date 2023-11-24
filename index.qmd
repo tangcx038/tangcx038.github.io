@@ -14,7 +14,6 @@ about:
     - text: Resume
       icon: file-text
       
-
 ---
 
 ::: {#about-block}

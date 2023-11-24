@@ -183,13 +183,11 @@ share_emissions_plot <- share_food_emissions %>%
     axis.title = element_blank(),
     axis.text = element_text(size = 3),
     legend.title = element_blank(),
-    axis.line.x = element_line(color = "light gray", size = 0.75),
-    panel.grid.major.y = element_line(colour = "light gray", size=0.5, linetype = "dashed"),
     panel.grid.major.x = element_blank(),
     plot.margin = margin(1, 1, 1, 1, "cm"),
-    plot.title = element_text(size = 6),  # Size for the title
-    plot.subtitle = element_text(size = 6),  # Size for the subtitle
-    legend.text = element_text(size = 6)  # Size for the legend text
+    plot.title = element_text(size = 5),  # Size for the title
+    plot.subtitle = element_text(size = 5),  # Size for the subtitle
+    legend.text = element_text(size = 5)  # Size for the legend text
   )
 
 x <- girafe(ggobj = share_emissions_plot)
@@ -222,7 +220,7 @@ Rich countries like Singapore are a part of this. The graph shows more and **mor
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, out.width='100%', echo=FALSE, warning=FALSE, message=FALSE}
 # Load the required library
 library(plotly)
 
@@ -244,7 +242,7 @@ spline_plot
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The graph depicting the number of food factories across the years reveals a consistent upward trend, with a notable increase in 2020 from 1850 to 1940, marking a positive growth pattern. This steady expansion may be indicative of a resilient and growing food industry, potentially influenced by economic factors, population growth, and shifting consumer preferences. The successive yearly increments, such as in 2019 (1850 factories), 2018 (1802), 2017 (1755), and 2016 (1678), underscore a sustained positive trajectory. The substantial rise in 2020 could be linked to increased demand. However, this growth also raises considerations about the potential for food surplus and waste as increased production may outpace demand. </p>
+  <p><p>The graph depicting the number of food factories over the years shows a consistent upward trend, notably increasing from 1850 to 1940 in 2020. This suggests a resilient and expanding food industry influenced by economic factors, population growth, and changing consumer preferences. The successive yearly increments highlight a sustained positive trajectory, with 2020 experiencing a substantial rise possibly due to increased demand. However, this growth raises concerns about potential food surplus and waste as production may outpace demand. </p>
 </section>
 ")
 ```
@@ -296,7 +294,7 @@ According to the team's calculations, one tonne of food waste can generate betwe
 ")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, out.width='100%', echo=FALSE, warning=FALSE, message=FALSE}
 # Load the necessary libraries
 library(plotly)
 

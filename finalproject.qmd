@@ -337,7 +337,7 @@ cat("
 ")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, out.width='100%', echo=FALSE, warning=FALSE, message=FALSE}
 # Read the CSV file
 data <- read.csv('energy_saved_stat.csv')
 
@@ -362,12 +362,12 @@ plot
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The scatter graph provides a comprehensive perspective on the potential energy savings associated with recycling various types of waste, extending beyond food waste. It highlights the broader impact of recycling, emphasizing the significance of considering diverse materials, such as paper, in our efforts to conserve energy. The placement of data points across the graph effectively communicates the energy-saving potential of different waste materials. The visual representation serves as a compelling reminder that materials often disposed of without much thought, including paper, have substantial contributions to energy conservation when recycled. This graph underscores the importance of holistic waste management practices, encouraging a mindful approach to recycling various materials to maximize overall energy savings.</p>
+  <p><p><strong>Dive into the world of energy savings with this scatter graph!</strong> Beyond just food waste, it offers a comprehensive view of the potential energy savings linked to recycling various waste types. <strong>Ever thought about the impact of diverse materials, like paper, on energy conservation?</strong> The strategic arrangement of data points on the graph vividly communicates the untapped potential in different waste materials. This visual representation is a compelling reminder that materials often tossed aside, including paper, make substantial contributions to energy conservation when given a second life through recycling.</p>
 </section>
 ")
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, out.width='100%', echo=FALSE, warning=FALSE, message=FALSE}
 
 foodWasteData <- read_csv("Food Waste data and research - by country.csv")
 
@@ -416,7 +416,7 @@ ggplot(foodWasteData, aes(x = population_2021, y = combined_estimate_tpy)) +
 
 ```
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, out.width='100%', echo=FALSE, warning=FALSE, message=FALSE}
 foodWasteData <- read_csv("Food Waste data and research - by country.csv")
 
 # Create new column for combined estimate in tonnes/year
@@ -463,11 +463,11 @@ plot_ly(foodWasteData, x = ~population_2021, y = ~combined_estimate_tpy, text = 
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The graph indicates a strong relationship between a country's population size and its total food waste, with an r^2 regression coefficient of approximately 0.966. This implies that 96.6% of the variability in a nation's overall food waste can be accounted for by its population size. These results align precisely with my hypothesis that a country's total food waste is influenced by its population size.
+  <p>The graph paints a vivid picture, showcasing a robust relationship with an r^2 regression coefficient of about 0.966. This means a whopping 96.6% of a nation's overall food waste variability is tied to its population size. **Do the results resonate with your expectations?** These findings perfectly match my hypothesis, highlighting the precise influence of a country's population size on its total food waste.
 
-To conclude, **if every individual takes responsibility and contributes to reducing food waste through recycling and mindful consumption, we have the power to make a significant impact.**
+To conclude, if every individual takes responsibility and contributes to reducing food waste through recycling and mindful consumption, we have the power to make a significant impact.
 
-By doing so, not only can we decrease the amount of food discarded, but we can also save substantial amounts of energy.
+By doing so, not only can we decrease the amount of food discarded, but we can also save substantial amounts of energy.</p>
 
 <section id=\"Zooming into our home country Singapore\" class=\"container\" width=\"100%\">
   <h3 class=\"text-center fw-bold my-5\">🌿It's a collective effort that holds the key to a more sustainable and energy-efficient future for our planet.🌿</h3>

@@ -242,7 +242,9 @@ spline_plot
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The graph depicting the number of food factories over the years shows a consistent upward trend, notably increasing from 1850 to 1940 in 2020. This suggests a resilient and expanding food industry influenced by economic factors, population growth, and changing consumer preferences. The successive yearly increments highlight a sustained positive trajectory, with 2020 experiencing a substantial rise possibly due to increased demand. However, this growth raises concerns about potential food surplus and waste as production may outpace demand. </p>
+
+  <p><p><p><strong>The graph depicting the number of food factories over the years</strong> shows a consistent upward trend, notably increasing from <strong>1850 to 1940 in 2020</strong>. This suggests a resilient and expanding food industry influenced by <strong>economic factors, population growth, and changing consumer preferences</strong>. The successive yearly increments highlight a sustained positive trajectory, with <strong>2020 experiencing a substantial rise possibly due to increased demand</strong>. However, this growth raises concerns about potential <strong>food surplus and waste as production may outpace demand</strong>.</p>
+ </p>
 </section>
 ")
 ```
@@ -252,7 +254,8 @@ cat("
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The Shiny interactive chart vividly illustrates the significant impact of food waste as a substantial contributor to overall waste in Singapore. With a considerable amount of food waste being generated, the visualization exposes a concerning trend where a substantial portion is not being effectively recycled. Instead, a high volume of food is disposed of, contributing to environmental concerns. The interactive features of the chart empower users to delve into the intricate details of waste management by exploring and selecting various materials. This exploration unveils the distinct quantities of each material being generated, disposed of, and recycled in Singapore, shedding light on the urgency of addressing food waste management practices for a more sustainable and environmentally conscious future. </p>
+  <p> With a considerable amount of food waste being generated, the visualization exposes a concerning trend where a <strong>substantial portion is not being effectively recycled</strong>. Instead, a high volume of food is disposed of, contributing to environmental concerns. The interactive features of the chart empower users to delve into the intricate details of waste management by **exploring and selecting various materials**. This exploration unveils the distinct quantities of each material being generated, disposed of, and recycled in Singapore, shedding light on the <strong>urgency of addressing food waste management practices</strong> for a more sustainable and environmentally conscious future.</p>
+ </p>
 </section>
 ")
 ```
@@ -277,19 +280,23 @@ cat("
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The Shiny interactive chart provides a comprehensive visualization of wasting and recycling rates for various types of waste. Notably, the lines representing the rates for food and plastics reveal a concerning trend—they do not intersect. This lack of intersection indicates that concerted efforts to recycle these common types of waste, namely food and plastics, are currently insufficient. The implications are significant, as effective recycling of these materials could have a substantial positive impact on waste management and environmental sustainability. </p>
+  <p><strong>The Shiny interactive chart provides a comprehensive visualization</strong> of wasting and recycling rates for various types of waste. Notably, the lines representing the rates for <strong>food and plastics reveal a concerning trend</strong>. This lack of intersection indicates that concerted efforts to recycle these common types of waste, namely <strong>food and plastics, are currently insufficient</strong>. The implications are significant, as <strong>effective recycling of these materials</strong> could have a substantial positive impact on waste management and environmental sustainability.</p>
 </section>
 ")
 ```
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>A bit of information regarding this segment:
-  NUS researchers are at the forefront of addressing Singapore's food waste challenges, with approximately 10% of total waste attributed to discarded food and a recycling rate of around 14%. Headed by Associate Professor Tong Yen Wah from NUS Faculty of Engineering's Department of Chemical and Biomolecular Engineering, a collaboration with Shanghai Jiao Tong University has led to the development of an innovative anaerobic digester system. This system efficiently converts food scraps into electrical energy, heat, and fertilizers, forming a self-sustaining cycle as the generated electricity and heat power the entire process.
+  <h2>Turning Waste into Energy: NUS Researchers Leading the Charge</h2>
 
-Operating like a biochemical stomach, the anaerobic digester breaks down organic matter in an oxygen-free environment. Designed by Dr. Zhang Jingxin from NUS Environmental Research Institute (NERI), the system utilizes anaerobic micro-organisms to convert food waste into biogas, subsequently transformed into heat and electrical energy. The repurposed heat is used to produce hot water, maintaining the optimal temperature for digestion. Every component of the system, from sensors to ventilating fans, is powered by electricity generated within.
+<p><strong>Are you aware of Singapore's food waste challenges?</strong> NUS researchers, under the guidance of Associate Professor Tong Yen Wah, are tackling this issue head-on. Approximately 10% of total waste in the country is attributed to discarded food, and the recycling rate hovers around 14%. But here's the exciting part:</p>
 
-According to the team's calculations, one tonne of food waste can generate between 200 to 400 kilowatt-hours of electricity, contingent on waste composition. The anaerobic digester also yields nutrient-rich digestate, converting about 80% of fed food waste, which can be further processed into liquid fertilizers for agricultural use. </p>
+<p><strong>Can waste be transformed into a sustainable cycle?</strong> In collaboration with Shanghai Jiao Tong University, the team has developed an innovative anaerobic digester system. This groundbreaking technology efficiently converts food scraps into a self-sustaining cycle of electrical energy, heat, and fertilizers.</p>
+
+<p><strong>Have you heard of a biochemical stomach for waste?</strong> Operating like just that, the anaerobic digester, designed by Dr. Zhang Jingxin, breaks down organic matter in an oxygen-free environment. It generates biogas, which is then transformed into heat and electricity, powering the entire process.</p>
+
+<p><strong>How much electricity can one tonne of food waste produce?</strong> According to the team's estimates, it can generate between 200 to 400 kilowatt-hours. Additionally, the anaerobic digester yields nutrient-rich digestate, converting about 80% of fed food waste. This byproduct can be further processed into liquid fertilizers, contributing to sustainable agricultural practices.</p>
+</p>
 </section>
 ")
 ```
@@ -324,7 +331,8 @@ plot
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p>The donut chart visually represents the potential energy savings achievable through recycling various waste types, encompassing food waste. The concentric circles illustrate the proportionate distribution of energy savings, with each segment representing a specific waste category. This insightful visualization provides a clear overview of the comparative contributions of different waste types to the overall potential energy conservation. Specifically, the chart emphasizes the significant role of recycling, including the recycling of food waste, in harnessing and optimizing energy resources. </p>
+  <p><strong>Ever wondered about the untapped energy potential in recycling?</strong> The donut chart above not only visually represents potential energy savings but also delves into the world of waste, including food waste. The concentric circles guide you through the proportional distribution of energy savings, offering a look at the contributions of various waste types. <strong>Have you considered the impact of recycling on energy conservation?</strong> </p>
+ </p>
 </section>
 ")
 ```
@@ -462,7 +470,7 @@ To conclude, **if every individual takes responsibility and contributes to reduc
 By doing so, not only can we decrease the amount of food discarded, but we can also save substantial amounts of energy.
 
 <section id=\"Zooming into our home country Singapore\" class=\"container\" width=\"100%\">
-  <h3 class=\"text-center fw-bold my-5\">It's a collective effort that holds the key to a more sustainable and energy-efficient future for our planet.</h3>
+  <h3 class=\"text-center fw-bold my-5\">🌿It's a collective effort that holds the key to a more sustainable and energy-efficient future for our planet.🌿</h3>
   </p>
 </section>
 ")

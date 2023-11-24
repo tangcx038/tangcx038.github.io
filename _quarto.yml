@@ -40,8 +40,6 @@ format:
   html:
     theme: Journal
     fontsize: 1.35em
-    fontcolor: "#7ec37d"
-    linkcolor: "#f7f5ee"
     toc: true
     fig-cap-location: margin
     anchor-sections: true
@@ -53,9 +51,5 @@ format:
       gutter-width: 1.5rem
     css: styles.css
 
-    
-      
-    
-    
 
 editor: visual

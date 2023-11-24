@@ -199,7 +199,7 @@ x
 
 ```{r, results='asis', echo=FALSE}
 cat("
-  <p><p> China emerged as the leading contributor, increasing its emissions from 10% to 14% between 2005 and 2015. Brazil and Indonesia reduced their shares to around 7% and 9%, while the U.S. ranged between 7.5% and 10%. The data underscores the complex environmental impact of food systems, emphasizing the necessity for sustainable practices across the entire production and distribution process.</p>
+  <p><p> Food systems involving various activities from farming and land use changes to the entire supply chain, including transportation, packaging, processing, retail, cooking, and waste management contributes to food waste and consequently contributing to greenhouse gas emissions.China's emissions steadily increased during this period, rising from 10% to 14%, making it the top contributor from 2005 to 2015. Brazil and Indonesia experienced fluctuations but ultimately reduced their shares to around 7% and 9% in 2015. The U.S. contributed between 7.5% and 10%, while India saw a slight increase from 5% to 6%. Argentina maintained a consistent 2%, and Mexico had the smallest share at around 1%. The graph highlights the intricate environmental impact of food systems. Importantly, these figures focus on emissions tied to food production, emphasizing the need for sustainable practices throughout the entire food production and distribution process to address their environmental impact.</p>
 </section>
 ")
 ```

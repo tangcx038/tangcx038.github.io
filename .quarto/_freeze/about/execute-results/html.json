@@ -2,9 +2,7 @@
   "hash": "4187389d7ef9d534d25e12475f9f5cc3",
   "result": {
     "markdown": "---\ntitle: \"About\"\nsubtitle: \"Read on to learn more about me\"\n---\n\n\n## {{< fa Smile >}} Me.\n\nI am currently a year3 undergraduate at the [National University of Singapore](https://nus.edu.sg/), pursuing a [Bachelor's in Arts in Archiectture](https://cde.nus.edu.sg/arch/programmes/bachelor-of-arts-in-architecture/) with a major in Architecture alongside a minor in [Interactive Media Development](https://fass.nus.edu.sg/cnm/undergraduate-minor-imd/). \n\n## {{< fa racket >}} Hobbies.\n\nI reside in the vibrant community of Raffles Hall. Sporting activities are a significant part of my routine, with badminton and table tennis being my go-to choices during leisure hours. Volunteering is another passion I pursue whenever time permits. Engaging in meaningful conversations and acquiring new knowledge bring me immense joy. Currently, I am delving into the world of animation creation using Procreate, and simultaneously, I'm exploring the art of webpage development through the NM2207 module.\n\n\n::: column-margin\n\n::: {.cell}\n::: {.cell-output-display}\n![](StudioFR.jpg)\n:::\n:::\n\n\n::: {.extra-small-text .dark-gray-text .topbr}\nMy Journey in Architecture with my professors and unrelenting supports from my peers and family members.\n:::\n:::\n\n---\n\n## {{< fa book >}} NM2207\n\nCheck out for my current NM2207 weekly progress:\n\n<https://github.com/tangcx038/NM2207_CHING>\n\n<https://github.com/tangcx038/tangcx038.github.io>\n\n\n",
-    "supporting": [
-      "about_files"
-    ],
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

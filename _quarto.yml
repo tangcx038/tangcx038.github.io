@@ -20,7 +20,6 @@ website:
         file: about.qmd
       - text: "Final Project"
         file: finalproject.qmd
-    
 
         
   #footer

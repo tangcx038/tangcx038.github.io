@@ -250,6 +250,7 @@ cat("
 
 <iframe height="400" width="100%" frameborder="no" src="https://tangcx038.shinyapps.io/shiny1/"> </iframe>
 
+
 ```{r, results='asis', echo=FALSE}
 cat("
   <p><p>The Shiny interactive chart vividly illustrates the significant impact of food waste as a substantial contributor to overall waste in Singapore. With a considerable amount of food waste being generated, the visualization exposes a concerning trend where a substantial portion is not being effectively recycled. Instead, a high volume of food is disposed of, contributing to environmental concerns. The interactive features of the chart empower users to delve into the intricate details of waste management by exploring and selecting various materials. This exploration unveils the distinct quantities of each material being generated, disposed of, and recycled in Singapore, shedding light on the urgency of addressing food waste management practices for a more sustainable and environmentally conscious future. </p>
@@ -330,6 +331,8 @@ server <- function(input, output) {
 # Run the Shiny app
 shinyApp(ui, server)
 ```
+
+<iframe height="400" width="100%" frameborder="no" src="https://tangcx038.shinyapps.io/shiny2/"> </iframe>
 
 ```{r, results='asis', echo=FALSE}
 cat("

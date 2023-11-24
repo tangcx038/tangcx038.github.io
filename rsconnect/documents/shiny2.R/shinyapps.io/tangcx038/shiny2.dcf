@@ -1,0 +1,12 @@
+name: shiny2
+title: shiny2
+username: tangcx038
+account: tangcx038
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10617031
+bundleId: 7964569
+url: https://tangcx038.shinyapps.io/shiny2/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

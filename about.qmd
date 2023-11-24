@@ -3,11 +3,11 @@ title: "About"
 subtitle: "Read on to learn more about me"
 ---
 
-## {{< fa gamepad >}} Me.
+## {{< fa smile >}} Me.
 
 I am currently a year3 undergraduate at the [National University of Singapore](https://nus.edu.sg/), pursuing a [Bachelor's in Arts in Archiecture](https://cde.nus.edu.sg/arch/programmes/bachelor-of-arts-in-architecture/) with a major in Architecture alongside a minor in [Interactive Media Development](https://fass.nus.edu.sg/cnm/undergraduate-minor-imd/).
 
-## {{< fa racquet >}} Hobbies.
+## {{< fa gamepad >}} Hobbies.
 
 I reside in the vibrant community of Raffles Hall. Sporting activities are a significant part of my routine, with badminton and table tennis being my go-to choices during leisure hours. Volunteering is another passion I pursue whenever time permits. Engaging in meaningful conversations and acquiring new knowledge bring me immense joy. Currently, I am delving into the world of animation creation using Procreate, and simultaneously, I'm exploring the art of webpage development through the NM2207 module.
 

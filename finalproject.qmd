@@ -4,7 +4,6 @@ runtime: shiny
 output: html_document
 ---
 
-
 ```{r setup, include=FALSE}
 library(shiny)
 library(flexdashboard)
@@ -26,11 +25,7 @@ library(knitr)
 library(sqldf)
 ```
 
-```{=html}
 <link rel="stylesheet" href="./_site/styles.css">
-
-
-```
 
 ```{r, results='asis', echo=FALSE}
 cat("
@@ -99,7 +94,6 @@ interactiveMap
 
 ```
 
-
 ```{r, results='asis', echo=FALSE}
 
 cat("
@@ -111,7 +105,6 @@ cat("
 </section>
 ")
 ```
-
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -156,7 +149,6 @@ OurWorldInData.org/environmental-impacts-of-food ● CC BY"
 
 map
 ```
-
 
 ```{r, results='asis', echo=FALSE}
 cat("
@@ -207,7 +199,6 @@ cat("
 ")
 ```
 
-
 ```{r, results='asis', echo=FALSE}
 cat("
 <section class=\"image-container\">
@@ -252,7 +243,6 @@ cat("
 </section>
 ")
 ```
-
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Reading the CSV files
@@ -378,7 +368,6 @@ cat("
 
 ```
 
-
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 # Read the CSV file
 clean_waste_03_22 <- read.csv('2003_2022_waste.csv') %>%
@@ -482,7 +471,7 @@ plot <- plot_ly(data,
 
 # Display the plot
 plot
-```    
+```
 
 ```{r, results='asis', echo=FALSE}
 cat("
@@ -520,9 +509,6 @@ cat("
 </section>
 ")
 ```
-
-
-
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 

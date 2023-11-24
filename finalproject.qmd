@@ -97,7 +97,6 @@ interactiveMap <- createInteractiveMap("food-waste-by-country-2023.csv")
 
 interactiveMap
 ```
-
 ```{r, results='asis', echo=FALSE}
 
 cat("
@@ -629,6 +628,7 @@ By doing so, not only can we decrease the amount of food discarded, but we can a
 </section>
 ")
 ```
+
 
 
 

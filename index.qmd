@@ -13,6 +13,8 @@ about:
       href: https://github.com/ChingXian
     - text: Resume
       icon: file-text
+      
+
 ---
 
 ::: {#about-block}

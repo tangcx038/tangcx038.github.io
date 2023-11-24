@@ -3,7 +3,7 @@ title: "About"
 subtitle: "Read on to learn more about me"
 ---
 
-## {{< fa smile >}} Me.
+## {{< fa gamepad >}} Me.
 
 I am currently a year3 undergraduate at the [National University of Singapore](https://nus.edu.sg/), pursuing a [Bachelor's in Arts in Archiecture](https://cde.nus.edu.sg/arch/programmes/bachelor-of-arts-in-architecture/) with a major in Architecture alongside a minor in [Interactive Media Development](https://fass.nus.edu.sg/cnm/undergraduate-minor-imd/).
 
